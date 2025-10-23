@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Règlement Intérieur VCSV 2026</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #f0f2f5;           
+            margin: 0;
+            padding: 20px;
+            margin-top: -30px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            color: #2c3e50;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+            background: linear-gradient(to right, #7979b2, #0cf382);
+            padding: 10px 20px;
+            border-radius: 20px;
+            border: double;
+            animation: pop 0.6s ease-out;
+            
+        }
+
+        .section {
+            margin-bottom: 18px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+        .section-header {
+            padding: 10px;
+            font-size: 18px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            
+        }
+            .section-header:hover {
+                transform: scale(0.98);
+            }
+        .special {
+            color: #FF5722;
+            font-weight: bold;
+            background-color: #FFF3E0;
+            padding: 10px;
+            border-left: 5px solid #FF9800;
+            border-radius: 5px;
+        }
+
+
+        .section-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+            background: #fff;
+            padding: 0 10px;
+        }
+
+            .section-content p, .section-content ul {
+                margin: 20px 0;
+            }
+
+        .active .section-content {
+            max-height: 1000px;
+            padding-bottom: 15px;
+        }
+
+        .icon {
+            font-size: 20px;
+        }
+
+        /* Couleurs par thème */
+        .theme-blue {
+            background: #3498db;
+        }
+
+        .theme-green {
+            background: #2ecc71;
+        }
+        .theme-green-clair {
+            background: #2ecc51;
+        }
+
+        .theme-orange {
+            background: #e67e22;
+        }
+
+        .theme-gold {
+            background: #f1c40f;
+        }
+
+        .theme-violet {
+            background: #8d1af3
+        }
+        .theme-red {
+            background: #e74c3c;
+        }
+
+        .theme-purple {
+            background: #9b59b6;
+        }
+
+        .theme-yellow {
+            background: #0066cc;
+        }
+        .theme-effet1 {
+            background: #ff0000;
+        }
+        .theme-6 {
+            background: #cccccc;
+        }
+        .theme-9 {
+            background: #1a1a1a;
+        }
+        .bouton-formulaire {
+            display: inline-block;
+            background-color: #FF5722;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            transition: background-color 0.3s ease;
+        }
+
+            .bouton-formulaire:hover {
+                background-color: #E64A19;
+            }
+
+
+            
+    </style>
+</head>
+<body>
+    <h1>🚴‍    Règlement Intérieur – VCSV Péronne 2026    🚴‍</h1>
+    <p>Nous organisons des <strong>événements festifs</strong> pour tous les âges.</p>
+    <p><em>Rejoignez-nous</em> pour une aventure pleine de surprises !</p>
+    <blockquote>« Le vélo, c’est plus qu’un sport, c’est un art de vivre. »</blockquote>
+    <p><mark>Prochaine sortie : samedi 10h</mark></p>
+
+
+    <div class="section">
+        <div class="section-header theme-blue" onclick="toggleSection(this)">
+            <span>🎯 1: Préambule  🎯</span>
+            <span class="icon">➕</span>
+        </div>
+        <div class="section-content">
+            <p>Le présent règlement est arrêté par le bureau directeur.</p>
+            <p></p>
+            <hr style="border: none; height: 3px; background: linear-gradient(to right, #FF9800, #FFEB3B); margin: 30px 0;">
+            <p>Toute demande de modification du règlement doit être faite de façon écrite et adressée au bureau du club.</p>
+            <ul>
+                <li>La demande doit être très précise.</li>
+                <li>Seuls les licenciés peuvent faire une demande de modification.</li>
+            </ul>
+            <p></p>
+            <hr style="border: none; height: 3px; background: linear-gradient(to right, #FF9800, #FFEB3B); margin: 30px 0;">
+            <blockquote style="font-style:italic; border-left:4px solid #FF9800; padding-left:10px;">
+                “Toute modification de ce règlement n’est effective qu’en début d’année civile.”
+            </blockquote>
+
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-header theme-green-clair" onclick="toggleSection(this)">
+            <span>💼 2: Membre du bureau directeur : 💼</span>
+            <span class="icon">➕</span>
+        </div>
+        <div class="section-content">
+            <p>Le bureau directeur est composé de:</p>
+            <ul>
+                <li>L'ensemble des membres du bureau déclaré en préfecture</li>
+                <li>de licencié ayant fait la demande écrite et accepté par les membres titulaire.</li>
+            </ul>
+            <blockquote style="font-style:italic; border-left:4px solid #FF9800; padding-left:10px;">
+                membres du bureau directeur consultable en Annexe.
+            </blockquote>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-header theme-green" onclick="toggleSection(this)">
+            <span>💳 3: Adhésions & Cotisations 💳</span>
+            <span class="icon">➕</span>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li> Licence prise en charge pour le bureau et les signaleurs</li>
+                <li> Licence payante pour les autres coureurs</li>
+                <li> Remise sur le tarif licence pour les aidants actif à l'encadrement des jeunes pour toutes les activités</li>
+                <li> Pass-sport accepté</li>
+            </ul>
+            <blockquote style="font-style:italic; border-left:4px solid #FF9800; padding-left:10px;">
+                Tarifs en Annexe.
+            </blockquote>
+        </div>
+
+    </div>
+
+    <div class="section">
+        <div class="section-header theme-orange" onclick="toggleSection(this)">
+            <span>👕 4: Tenues 👕</span>
+            <span class="icon">➕</span>
+        </div>
+        <div class="section-content">
+            <p>le club prete:</p>
+            <ul>
+
+                <li> Maillot manches courtes + cuissard fournis.</li>
+                <li> Port obligatoire sur les manifestations.</li>
+                <li> Tenue à rendre propre et en bon état en cas de départ.</li>
+            </ul>
+            <p>En cas de chute ou de dégradation involontaire partielle ou totale de la tenue, maillot ou cuissard, le remplacement sera effectué en échange et après contrôle.</p>
+            <p>Nota : le port d’un autre cuissard sera toléré lorsque le licencié effectue 2 épreuves sur 2 jours consécutifs.</p>
+            <fieldset style="border:2px dashed #FF9800; padding:10px;">
+                <legend style="font-weight:bold;">‼️ Rappel</legend>
+                les equipements sont proriété du club!
+            </fieldset>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-header theme-purple" onclick="toggleSection(this)">
+            <span>⛓️‍💥 5: Mutations ⛓️‍💥</span>
+            <span class="icon">➕</span>
+        </div>
+        <div class="section-content">
+            <p>Tout licencié quittant le club ou qui ne renouvelle pas sa licence doit:</p>
+            <ul>
+                <li> s'aquitter des frais de mutation auprés des federations</li>
+                <li> renoncer à la prime offerte par le club pour ces resultats</li>
+                <li> restituer tout ces equipements</li>
+                <li> restituer le trop percu si sa mutation interveint apres l'AG club.'</li>
+            </ul>
+            <div style="border:2px dashed #FF9800; padding:15px; background:#FFF3E0; border-radius:10px;">
+                <h2 style="margin-top:0;">🎈 Infos</h2>
+                <ul>
+                    <li>📍 Pour sa part, le club renonce à utiliser le droit a l'image accorder par le licencié demissionnaire.</li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-header theme-6" onclick="toggleSection(this)">
+            <span>🚗 6: Deplacement : 🚗</span>
+            <span class="icon">➕</span>
+        </div>
+        <div class="section-content">
+            <p>Dans toutes les catégories, les coureurs se déplacent par leur propre moyen et à leur frais.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-header theme-violet" onclick="toggleSection(this)">
+            <span>🏆 7: Récompenses 🏆</span>
+            <span class="icon">➕</span>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li> Remises uniquement lors de l’AG</li>
+                <li> Basées sur résultats, assiduité, implication</li>
+                <li> Soumises à la trésorerie du club</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-header theme-gold" onclick="toggleSection(this)">
+            <span>🏋️‍ 8: Entrainement 🏋️‍</span>
+            <span class="icon">➕</span>
+        </div>
+        <div class="section-content">
+            <fieldset style="border: 2px dashed #FF9800; padding: 10px; width: 40%;">
+                <legend style="font-weight:bold;">⚠️ Attention</legend>
+                Pour tous les coureurs le port du casque à coque rigide est obligatoire.
+            </fieldset>
+            <p> </p>
+
+            <table style="width:80%; border-collapse:collapse;">
+                <tr style="background:#FFECB3;">
+                    <th style="border:1px solid #FFB300;">Activité</th>
+                    <th style="border:1px solid #FFB300;">Lieu</th>
+                    <th style="border:1px solid #FFB300;">Jour</th>
+                    <th style="border:1px solid #FFB300;">Horaire</th>
+                </tr>
+                <tr>
+                    <td style="border:1px solid #FFB300;">EDV</td>
+                    <td style="border:1px solid #FFB300;">Parking face au college BRANGER</td>
+                    <td style="border:1px solid #FFB300;">Mercredi et Samedi</td>
+                    <td style="border:1px solid #FFB300;">14h00</td>
+                </tr>
+                <tr>
+                    <td style="border:1px solid #FFB300;">Adultes</td>
+                    <td style="border:1px solid #FFB300;">Devant l'historial de Peronne'</td>
+                    <td style="border:1px solid #FFB300;">Dimanche</td>
+                    <td style="border:1px solid #FFB300;">8h à 9h selon le lever du jours</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-header theme-9" onclick="toggleSection(this)">
+            <span>📬 9: Engagements 📬</span>
+            <span class="icon">➕</span>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li> Engagements FFC passe par le club</li>
+                <p>Engagements à transmettre 10 jours avant.</p>
+                <li> Engagements UFOLEP libre et à la charge du licencié</li>
+                <li> Engagement epreuve cyclosportive et/ou randonnée libre et à la charge du licencié</li>
+            </ul>
+            <p>Pensez à demander un justificatif lors de randonnée ou cyclosportive, une envelope est disponible pour chaque discipline( à repartir equitablement entre tous). remboursement par le club.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-header theme-yellow" onclick="toggleSection(this)">
+            <span>📣 10: Reunion et Manifestation 📣</span>
+            <span class="icon">➕</span>
+        </div>
+        <div class="section-content">
+            <p>Présence aux réunions indispensable.</p>
+            <p>Convocation transmise en temps utile.</p>
+            <p>Présence vivement souhaitée lors des manifestations organisées autour de la ville de Péronne</p>
+            <p>ainsi qu'aux organisations du club dans les autres disciplines.</p>
+
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-header theme-red" onclick="toggleSection(this)">
+            <span>⚠️ 11: Discipline & Sanctions ⚠️</span>
+            <span class="icon">➕</span>
+        </div>
+        <div class="section-content">
+            <p>Tout comportement irrespectueux peut etre sanctionné.</p>
+            <p>Tout propos nuisant à l'image du club ou à un de ces membres peut etre sanctionné.</p>
+            <p>Une réunion du bureau directeur se tiendra pour donner suite à l incident</p>
+            <p></p>
+            <p>Sanctions possibles :</p>
+            <ul>
+
+                <li> avertissement orale</li>
+                <li> avertissement ecrit</li>
+                <li> exclusion temporaire</li>
+                <li> exclusion definitive</li>
+            </ul>
+
+            <p>Nota : l’exclusion définitive d’un licencié en cours de saison ne peut se faire qu’à l’unanimité des membres du bureau directeur présent lors d'une réunion exceptionnel.</p>
+            <p>Toutes les pénalités, amendes ou autres, décidées en commission FFC ou UFOLEP sont à la charge du coureur.</p>
+            <p></p>
+            <p>La non restitution des equipements du club, suite à un depart ou non renouvelment de licence, expose le demisionnaire à des sanctions.</p>
+            <p>Rembousement sur la base d'un equipement neuf</p>
+            <p>Plainte du club devant les federations concernées, si mutation.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-header theme-effet1" onclick="toggleSection(this)">
+            <span>⚙️ ANNEXE ⚙️</span>
+            <span class="icon">➕</span>
+        </div>
+        <div class="section-content">
+            <p>Base de remboursement    4 euros/ course</p>
+
+            <p></p>
+            <p class="special" style="width:20%">Tarifs Licence</p>
+            <p></p>
+            <table style="width:60%; border-collapse:collapse;">
+                <tr style="background:#FFECB3;">
+                    <th style="border:1px solid #FFB300;">Type de licence</th>
+                    <th style="border:1px solid #FFB300;">Tarif</th>
+                    <th style="border:1px solid #FFB300;">remise</th>
+                </tr>
+                <tr>
+                    <td style="border:1px solid #FFB300;">UFOLEP toutes categories</td>
+                    <td style="border:1px solid #FFB300;">65 €uros</td>
+                    <td style="border:1px solid #FFB300;">pas de remise</td>
+                </tr>
+                <tr>
+                    <td style="border:1px solid #FFB300;">FFC EDV</td>
+                    <td style="border:1px solid #FFB300;">73 €uros</td>
+                    <td style="border:1px solid #FFB300;">Remise club 10 €uros</td>
+                </tr>
+                <tr>
+                    <td style="border:1px solid #FFB300;">FFC U15/U17</td>
+                    <td style="border:1px solid #FFB300;">73 €uros</td>
+                    <td style="border:1px solid #FFB300;">Pass sport accepté</td>
+                </tr>
+                <tr>
+                    <td style="border:1px solid #FFB300;">FFC ACCESS</td>
+                    <td style="border:1px solid #FFB300;">85 €uros</td>
+                    <td style="border:1px solid #FFB300;">Remise pour aidants actif</td>
+                </tr>
+                <tr>
+                    <td style="border:1px solid #FFB300;">FFC Menmbre</td>
+                    <td style="border:1px solid #FFB300;">73 €uros</td>
+                    <td style="border:1px solid #FFB300;">Remise club integral</td>
+                </tr>
+            </table>
+
+
+            <p></p>
+            <p class="special" style="width:20%">Engagements</p>
+            <p></p>
+
+            <table style="width:60%; border-collapse:collapse;">
+                <tr style="background:#FFECB3;">
+                    <th style="border:1px solid #FFB300;">FFC</th>
+                    <th style="border:1px solid #FFB300;">UFOLEP</th>
+                </tr>
+                <tr>
+                    <td style="border:1px solid #FFB300;">LEROY Emmanuel</td>
+                    <td style="border:1px solid #FFB300;">BERNABEO Remo</td>
+                </tr>
+                <tr>
+                    <td style="border:1px solid #FFB300;">06 78 44 13 82 (SMS Uniquement</td>
+                    <td style="border:1px solid #FFB300;">06 00 00 00 00</td>
+                </tr>
+                <tr>
+                    <td style="border:1px solid #FFB300;">vcsv.peronne@gmail.com</td>
+                    <td style="border:1px solid #FFB300;">remo1@gmail.com</td>
+                </tr>
+            </table>
+            <p></p>
+            <p class="special" style="width:20%">     BUREAU DIRECTEUR</p>
+            <p></p>
+            <table style="width:80%; border-collapse:collapse;">
+                <tr style="background:#FFECB3;">
+                    <th style="border:1px solid #FFB300;">Fonction</th>
+                    <th style="border:1px solid #FFB300;">Nom/Prenom</th>
+                    <th style="border:1px solid #FFB300;">Telephone</th>
+                    <th style="border:1px solid #FFB300;">e-mail</th>
+                </tr>
+                <tr>
+                    <td style="border:1px solid #FFB300;">President</td>
+                    <td style="border:1px solid #FFB300;">LEROY Frederic</td>
+                    <td style="border:1px solid #FFB300;">06 00 00 00 00</td>
+                    <td style="border:1px solid #FFB300;">leroy.frederic1979@gmail.com</td>
+                </tr>
+                <tr>
+                    <td style="border:1px solid #FFB300;">Secretaire</td>
+                    <td style="border:1px solid #FFB300;"></td>
+                    <td style="border:1px solid #FFB300;">06 00 00 00 00</td>
+                    <td style="border:1px solid #FFB300;"></td>
+                </tr>
+                <tr>
+                    <td style="border:1px solid #FFB300;">Tresoriere</td>
+                    <td style="border:1px solid #FFB300;"></td>
+                    <td style="border:1px solid #FFB300;">06 00 00 00 00</td>
+                    <td style="border:1px solid #FFB300;"></td>
+                </tr>
+                <tr>
+                    <td style="border:1px solid #FFB300;">President Honneur</td>
+                    <td style="border:1px solid #FFB300;"></td>
+                    <td style="border:1px solid #FFB300;">06 00 00 00 00</td>
+                    <td style="border:1px solid #FFB300;"></td>
+                </tr>
+                <tr>
+                    <td style="border:1px solid #FFB300;">Vice Precident</td>
+                    <td style="border:1px solid #FFB300;"></td>
+                    <td style="border:1px solid #FFB300;">06 00 00 00 00</td>
+                    <td style="border:1px solid #FFB300;"></td>
+                </tr>
+                <tr>
+                    <td style="border:1px solid #FFB300;">Membre Correspondant</td>
+                    <td style="border:1px solid #FFB300;"></td>
+                    <td style="border:1px solid #FFB300;">06 00 00 00 00</td>
+                    <td style="border:1px solid #FFB300;"></td>
+                </tr>
+                <tr>
+                    <td style="border:1px solid #FFB300;">Membre Bureau</td>
+                    <td style="border:1px solid #FFB300;"></td>
+                    <td style="border:1px solid #FFB300;">06 00 00 00 00</td>
+                    <td style="border:1px solid #FFB300;"></td>
+                </tr>
+            </table>
+
+        </div>
+        <hr style="border: none; height: 3px; background: linear-gradient(to right, #FF9800, #FFEB3B); margin: 30px 20px;">
+        <div class="section">
+            <a class="bouton-formulaire" href="https://forms.gle/zxcktxnfsoUks7Dg7" target="_blank">
+                ✍️ Lu et Approuvé
+            </a>
+        </div>
+
+
+    </div>
+
+    <footer style="text-align:center; margin-top:40px; font-size:0.9em; color:#888;">
+        <a> Facebook	 		https://www.facebook.com/VeloClubSanterreVermandois/</a>
+        © 2025 Club VCSV Péronne — Fait par E LEROY
+    </footer>
+    <!-- Formulaire -->
+
+    <script>
+        function toggleSection(header) {
+            const section = header.parentElement;
+            section.classList.toggle('active');
+            const icon = header.querySelector('.icon');
+            icon.textContent = section.classList.contains('active') ? '➖' : '➕';
+        }
+    </script>
+
+</body>
+</html>
