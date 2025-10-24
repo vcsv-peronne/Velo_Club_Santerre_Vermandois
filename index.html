@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Club Cyclo - Mascotte & Guides</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Bienvenue au Club Cyclo 🎈</h1>
+    </header>
+
+    <nav class="navbar">
+        <a href="#" onclick="showTab('accueil')">Accueil</a>
+        <a href="#" onclick="showTab('guides')">Guides</a>
+        <a href="#" onclick="showTab('mascotte')">Mascotte</a>
+    </nav>
+
+    <section id="accueil" class="active">
+        <h2>🎉 Accueil</h2>
+        <p>Bienvenue sur notre site festif ! Découvrez nos événements, nos membres et nos projets.</p>
+    </section>
+
+    <section id="guides">
+        <h2>📘 Guides Techniques</h2>
+        <div class="guide-box">
+            <h3>🔧 Réparer un feu arrière</h3>
+            <p>Suivez les étapes illustrées pour reconnecter le faisceau du Kangoo.</p>
+        </div>
+        <button class="bouton-club">Télécharger le guide</button>
+    </section>
+
+    <section id="mascotte">
+        <h2>🐾 Notre Mascotte</h2>
+        <img src="images/mascotte.png" alt="Mascotte" class="mascotte">
+        <p>Voici notre mascotte flottante ! Elle accompagne tous nos événements avec bonne humeur.</p>
+    </section>
+
+    <script>
+        function showTab(tabId) {
+            document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
