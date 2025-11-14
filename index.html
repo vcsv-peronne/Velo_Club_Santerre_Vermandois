@@ -1,759 +1,750 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
     <title>VCSV Péronne</title>
+
+    <!--Style CSS-->
     <link rel="stylesheet" href=".\CSS\styles.css">
+
+    <!--les scripts-->
+    <script src="js/script.js" defer></script>
+
+    <!-- Leaflet CSS & JS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 </head>
 
+
 <body>
-
-    <div id="titre" class="navtitre">
-        <img src="./images/logo.png" width="190" height="180" alt="Logo Club">
-        <h1 class="heading_huge">VCSV Péronne</h1>
-        <img src="./images/logo.png" width="190" height="180" alt="Logo Club">
-    </div>
-
-    <div id="acceuil" class="navacceuil">
-        <nav role="navigation">
-            <div class="grid_2-col-acceuil">
-
-                <ul role="list">
-
-                    <li>
-                        <div class="grid_3-col-acceuil">
-                            <div>
-                                <div class="eyebrow-acceuil">Nos activités</div>
-                                <ul role="list" style="padding-right: 90px">
-                                    <li>
-                                        <a href="#Route" class="mega-nav_link-item-acceuil" tabindex="0">
-                                            <div class="icon is-medium on-accent-primary">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 32 32" fill="currentColor">
-                                                    <path d="m25.7 9.3l-7-7A.9.9 0 0 0 18 2H8a2.006 2.006 0 0 0-2 2v24a2.006 2.006 0 0 0 2 2h16a2.006 2.006 0 0 0 2-2V10a.9.9 0 0 0-.3-.7M18 4.4l5.6 5.6H18ZM24 28H8V4h8v6a2.006 2.006 0 0 0 2 2h6Z" stroke-linejoin="round"></path>
-                                                </svg>
-                                            </div>
-
-                                            <div>
-                                                <div>
-                                                    <strong>Route</strong>
-                                                </div>
-                                                <div class="paragraph_small text-color_secondary">Sorties et courses sur route</div>
-                                            </div>
-                                        </a>
-                                    </li>
-
-                                    <li class="margin-bottom_none">
-                                        <a href="#VTT" class="mega-nav_link-item-acceuil" tabindex="0">
-                                            <div class="icon is-medium on-accent-primary">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 32 32" fill="currentColor">
-                                                    <path d="m25.7 9.3l-7-7A.9.9 0 0 0 18 2H8a2.006 2.006 0 0 0-2 2v24a2.006 2.006 0 0 0 2 2h16a2.006 2.006 0 0 0 2-2V10a.9.9 0 0 0-.3-.7M18 4.4l5.6 5.6H18ZM24 28H8V4h8v6a2.006 2.006 0 0 0 2 2h6Z" stroke-linejoin="round"></path>
-                                                </svg>
-                                            </div>
-
-                                            <div>
-                                                <div>
-                                                    <strong>VTT</strong>
-                                                </div>
-                                                <div class="paragraph_small text-color_secondary">Randos et compétitions VTT</div>
-                                            </div>
-                                        </a>
-                                    </li>
-
-
-                                    <li class="margin-bottom_none">
-                                        <a href="#Loisir" class="mega-nav_link-item-acceuil" tabindex="0">
-                                            <div class="icon is-medium on-accent-primary">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 32 32" fill="currentColor">
-                                                    <path d="m25.7 9.3l-7-7A.9.9 0 0 0 18 2H8a2.006 2.006 0 0 0-2 2v24a2.006 2.006 0 0 0 2 2h16a2.006 2.006 0 0 0 2-2V10a.9.9 0 0 0-.3-.7M18 4.4l5.6 5.6H18ZM24 28H8V4h8v6a2.006 2.006 0 0 0 2 2h6Z" stroke-linejoin="round"></path>
-                                                </svg>
-                                            </div>
-
-                                            <div>
-                                                <div>
-                                                    <strong>Loisir</strong>
-                                                </div>
-                                                <div class="paragraph_small text-color_secondary">Balades et détente</div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <div>
-                                <div class="eyebrow-acceuil">Le club</div>
-                                <ul role="list" class="mega-nav_list">
-                                    <li class="margin-bottom_none">
-                                        <a href="#presentation" class="mega-nav_link-item-acceuil" tabindex="0">
-                                            <div class="icon is-medium on-accent-primary">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 32 32" fill="currentColor">
-                                                    <path d="m25.7 9.3l-7-7A.9.9 0 0 0 18 2H8a2.006 2.006 0 0 0-2 2v24a2.006 2.006 0 0 0 2 2h16a2.006 2.006 0 0 0 2-2V10a.9.9 0 0 0-.3-.7M18 4.4l5.6 5.6H18ZM24 28H8V4h8v6a2.006 2.006 0 0 0 2 2h6Z" stroke-linejoin="round"></path>
-                                                </svg>
-                                            </div>
-
-                                            <div>
-                                                <div>
-                                                    <strong>Présentation</strong>
-                                                </div>
-                                                <div class="paragraph_small text-color_secondary">Notre histoire et nos valeurs</div>
-                                            </div>
-                                        </a>
-                                    </li>
-
-                                    <li class="margin-bottom_none">
-                                        <a href="#membre" class="mega-nav_link-item-acceuil" tabindex="0">
-                                            <div class="icon is-medium on-accent-primary">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 32 32" fill="currentColor">
-                                                    <path d="m25.7 9.3l-7-7A.9.9 0 0 0 18 2H8a2.006 2.006 0 0 0-2 2v24a2.006 2.006 0 0 0 2 2h16a2.006 2.006 0 0 0 2-2V10a.9.9 0 0 0-.3-.7M18 4.4l5.6 5.6H18ZM24 28H8V4h8v6a2.006 2.006 0 0 0 2 2h6Z" stroke-linejoin="round">
-                                                    </path>
-                                                </svg>
-                                            </div>
-
-                                            <div>
-                                                <div>
-                                                    <strong>Membres</strong>
-                                                </div>
-                                                <div class="paragraph_small text-color_secondary">Découvrez notre équipe</div>
-                                            </div>
-                                        </a>
-                                    </li>
-
-                                    <li class="margin-bottom_none">
-                                        <a href="#galerie" class="mega-nav_link-item-acceuil" tabindex="0">
-                                            <div class="icon is-medium on-accent-primary">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 32 32" fill="currentColor">
-                                                    <path d="m25.7 9.3l-7-7A.9.9 0 0 0 18 2H8a2.006 2.006 0 0 0-2 2v24a2.006 2.006 0 0 0 2 2h16a2.006 2.006 0 0 0 2-2V10a.9.9 0 0 0-.3-.7M18 4.4l5.6 5.6H18ZM24 28H8V4h8v6a2.006 2.006 0 0 0 2 2h6Z" stroke-linejoin="round">
-                                                    </path>
-                                                </svg>
-                                            </div>
-
-                                            <div>
-                                                <div>
-                                                    <strong>Galerie</strong>
-                                                </div>
-                                                <div class="paragraph_small text-color_secondary">Photos du club</div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <div>
-                                <div class="eyebrow-acceuil">Infos pratiques</div>
-                                <ul role="list" class="mega-nav_list ">
-                                    <li class="margin-bottom_none">
-                                        <a href="#agenda" class="mega-nav_link-item-acceuil" tabindex="0">
-                                            <div class="icon is-medium on-accent-primary">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 32 32" fill="currentColor">
-                                                    <path d="m25.7 9.3l-7-7A.9.9 0 0 0 18 2H8a2.006 2.006 0 0 0-2 2v24a2.006 2.006 0 0 0 2 2h16a2.006 2.006 0 0 0 2-2V10a.9.9 0 0 0-.3-.7M18 4.4l5.6 5.6H18ZM24 28H8V4h8v6a2.006 2.006 0 0 0 2 2h6Z" stroke-linejoin="round">
-                                                    </path>
-                                                </svg>
-                                            </div>
-
-                                            <div>
-                                                <div>
-                                                    <strong>Agenda</strong>
-                                                </div>
-
-                                                <div class="paragraph_small text-color_secondary">Sorties à venir</div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li class="margin-bottom_none">
-                                        <a href="#adhesion" class="mega-nav_link-item-acceuil" tabindex="0">
-                                            <div class="icon is-medium on-accent-primary">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 32 32" fill="currentColor">
-                                                    <path d="m25.7 9.3l-7-7A.9.9 0 0 0 18 2H8a2.006 2.006 0 0 0-2 2v24a2.006 2.006 0 0 0 2 2h16a2.006 2.006 0 0 0 2-2V10a.9.9 0 0 0-.3-.7M18 4.4l5.6 5.6H18ZM24 28H8V4h8v6a2.006 2.006 0 0 0 2 2h6Z" stroke-linejoin="round">
-                                                    </path>
-                                                </svg>
-                                            </div>
-
-                                            <div>
-                                                <div>
-                                                    <strong>Adhésion</strong>
-                                                </div>
-                                                <div class="paragraph_small text-color_secondary">Rejoindre le club</div>
-                                            </div>
-                                        </a>
-                                    </li>
-
-                                    <li class="margin-bottom_none">
-                                        <a href="#contact" class="mega-nav_link-item-acceuil" tabindex="0">
-                                            <div class="icon is-medium on-accent-primary">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 32 32" fill="currentColor">
-                                                    <path d="m25.7 9.3l-7-7A.9.9 0 0 0 18 2H8a2.006 2.006 0 0 0-2 2v24a2.006 2.006 0 0 0 2 2h16a2.006 2.006 0 0 0 2-2V10a.9.9 0 0 0-.3-.7M18 4.4l5.6 5.6H18ZM24 28H8V4h8v6a2.006 2.006 0 0 0 2 2h6Z" stroke-linejoin="round">
-                                                    </path>
-                                                </svg>
-                                            </div>
-                                            <div>
-                                                <div>
-                                                    <strong>Contact</strong>
-                                                </div>
-                                                <div class="paragraph_small text-color_secondary">Contactez-nous facilement</div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-                <div style="position: absolute; top: 0; right: 0; bottom: 0; ">
-                    <a href="" class="card-link-acceuil" tabindex="0">
-                        <div class="card_body-acceuil">
-                            <div class="heading_h3">Roulez avec nous !</div>
-                            <p class="paragraph_small text-color_inverse-secondary">Venez partager la passion du vélo.</p>
-                            <div>
-                                <div class="button-group">
-                                    <div class="text-button is-secondary">
-                                        <strong class="heading_h4">Participer</strong>
-                                        <div class="button_icon">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 16 16" fill="none">
-                                                <path d="M2 8H14.5M14.5 8L8.5 2M14.5 8L8.5 14" stroke="currentColor" stroke-width="2" stroke-linejoin="round">
-                                                </path>
-                                            </svg>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
+    <!--Menu-->
+    <header class="navbar">
+        <nav class="club-menu">
+            <div class="ligne">
+                <div class="logo">🚴 VCSV Péronne</div>
+                <img class="club-menu img" src="images/mascotte_coupe.png" alt="Maillot du club cycliste de Péronne">
 
             </div>
-
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle" class="menu-icon">&#9776;</label>
+            <ul class="menu">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#club">Le Club</a></li>
+                <li><a href="#entrainement">Entrainement</a></li>
+                <li><a href="#evenement">Événements</a></li>
+                <li><a href="#visuels">Maillots & Visuels</a></li>
+                <li><a href="#galerie">Galerie</a></li>
+                <li><a href="#ressources">Ressources</a></li>
+                <li><a href="#membres">Membres</a></li>
+                <li><a href="#sponsors">Sponsors</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </nav>
-
-
-    </div>
-
-    <header class="section is-accent-primary sg_preview-bordered-header" style="padding-top:2rem">
-        <div class="container is-small">
-            <div class="ix_hero-intro-up-scale is-step-1-hero-intro-up-scale">
-                <div class="header is-align-center">
-                    <div class="button-group-header">
-                        <a href="#Activité" class="button on-accent-primary">Activités</a>
-                        <a href="#Club" class="button is-secondary on-accent-primary">Le Club</a>
-                        <a href="#Info" class="button on-accent-tertiary">Infos Pratique</a>
-                    </div>
-                    <h1 class="heading_h1">Ensemble sur la route, vivez vélo</h1>
-                    <p class="subheading">Club cyclisme pour tous : route, VTT, loisirs et compétition. Participez à nos sorties, découvrez nos membres et nos événements à venir. Rejoignez-nous pour partager la passion du vélo.</p>
-
-                </div>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="ix_hero-intro-up-scale is-step-2-hero-intro-up-scale">
-                <div class="image-ratio_3x2">
-                    <img class="image_cover" src="./images/Illustration-en-form.avif" width="1248" height="832" alt="image of cycling community event" data-aisg-image-id="9e01c1fe-ae9d-43e0-ac04-bee22169d767" loading="lazy">
-                </div>
-            </div>
-        </div>
     </header>
 
-
-
-    <section class="section">
-        <div class="container">
-            <div class="grid_2-col tablet-1-col gap-xxlarge">
-                <div id="w-node-_09e5e581-4ffc-7786-992c-3d0c874317b7-874317b4" class="w-node-_27db6224-fa03-7751-fba3-2d1d734e2175-bf3a21eb">
-                    <h2 class="heading_h5">Ensemble sur la route, vivez vélo</h2>
-                    <p class="paragraph_xlarge margin-bottom_none">Partagez la passion du cyclisme, que vous soyez amateur de route ou de VTT. Rejoignez nos sorties, découvrez nos activités à venir et faites connaissance avec notre équipe conviviale.</p>
-                </div>
-                <div class="grid_2-col gap-large">
-                    <div>
-                        <div class="nav_logo-icon">
-                            <img src="./images/logo.png">
-                        </div>
-
-                    </div>
-                </div>
-            </div>
+    <!-- Acceuil -->
+    <section id="accueil" class="hero">
+        <div class="hero-content">
+            <h1>🚴‍♂️ Roulez avec l’esprit de Péronne</h1>
+            <p>Un club cycliste festif, technique et local, pour tous les passionnés de la petite reine.</p>
+            <a href="#contact" class="cta-button">Nous rejoindre!</a>
         </div>
+        <div class="hero-visual">
+            <img src="images/logo.png" alt="Maillot du club cycliste de Péronne">
+        </div>
+
     </section>
 
 
-
-    <section id="Activité" class="section is-secondary">
-        <div class="container is-max">
-            <div class="header is-align-center heading-responsive_wrapper">
-                <h1 class="eyebrow">À ne pas manquer</h1>
-                <h2 class="heading-responsive text-width_xxsmall">À vos vélos, rejoignez-nous</h2>
-            </div>
-
-            <div id="Route" class="flex_horizontal flex_vertical gap-large">
-                <div class="ix_sticky-card is-card-1" style="will-change: filter, opacity, transform; filter: blur(0px); opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
-                    <div class="card card_body margin-top_xsmall">
-                        <div class="grid_2-col tablet-1-col gap-large">
-                            <div class="image-ratio_1x1">
-                                <img class="image_cover" src="./images/route.avif" width="629" height="629" alt="image of cycling community event" loading="lazy">
-                            </div>
-
-                            <div class="max-width_medium">
-                                <div class="eyebrow">Nos sorties</div>
-                                <h2>Entrainement route dimanche</h2>
-                                <p class="paragraph_large subheading">Roulez avec nous les dimanches ! Tous niveaux, ambiance détendue. Départ 8h30.</p>
-                                <p class="paragraph_large subheading">Parcours d'environ 80km. Allure adapté. Environ 3h de plaisir.</p>
-                                <p class="paragraph_large subheading">Départ face à l'historial de Péronne. </p>
-                                <p class="paragraph_large subheading">Boucle adapté au vent et condition climatique.</p>
-                                <div class="button-group">
-                                    <a href="" class="button ">Rejoindre</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="VTT" class="ix_sticky-card is-card-2 ix_backdrop-filter-blur" style="will-change: filter, opacity, transform; filter: blur(0px); opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
-                    <div class="card card_body margin-top_xsmall backdrop-filter_blur">
-                        <div class="grid_2-col tablet-1-col gap-large">
-                            <div class="image-ratio_1x1">
-                                <img class="image_cover" src="./images/VTT.avif" width="629" height="629" alt="image of cycling community event" data-aisg-image-id="922ad311-bf4d-470e-b51a-7d08e0cc9392" loading="lazy">
-                            </div>
-
-                            <div class="max-width_medium">
-                                <div class="eyebrow">VTT</div>
-                                <h2>Entraînement VTT collectif</h2>
-                                <p class="subheading">Explorez les sentiers en groupe. Rendez-vous mercredi à 14h.</p>
-                                <p class="subheading">Ainsi que le samedi à 14h.</p>
-                                <p class="subheading">Départ face au college Béranger de Péronne. Parking</p>
-                                <div class="button-group">
-                                    <a href="" class="button w-button">Participer</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="Loisir" class="ix_sticky-card is-card-3 ix_backdrop-filter-blur" style="will-change: filter, opacity, transform; filter: blur(0px); opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
-                    <div class="card card_body margin-top_xsmall backdrop-filter_blur">
-                        <div class="grid_2-col tablet-1-col gap-large">
-                            <div class="image-ratio_1x1">
-                                <img class="image_cover" src="./images/69023e0fb112f55158533ade_cfcf1a52-85af-41b8-835e-91bf4eaa7930.avif" width="629" height="629" alt="image" data-aisg-image-id="d02724cb-e6e4-41e0-bd33-8ed5741d503f" loading="lazy">
-                            </div>
-                            <div class="max-width_medium">
-                                <div class="eyebrow">À l’agenda</div>
-                                <h2>Course amicale locale</h2>
-                                <p class="subheading">Inscrivez-vous à notre prochaine course. Ouvert à tous, bonne ambiance garantie.</p>
-                                <div class="button-group">
-                                    <a href="" class="button">Découvrir</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- Club -->
+    <section id="club" class="section-club">
+        <div>
+            <img src="images/Illustration-en-form.avif" style="display: block; margin: auto;" alt="illustration">
         </div>
-    </section>
+        <div class="background-wheel">
+            <svg viewBox="0 0 200 200" class="wheel-svg">
+                <!-- Cercle extérieur -->
+                <circle cx="100" cy="100" r="90" stroke="var(--or-peronne)" stroke-width="6" fill="none" />
 
-    <header id="Club" class="section is-accent-primary">
-        <div class="container is-small">
-            <div class="ix_hero-intro-up-scale is-step-1-hero-intro-up-scale">
-                <div class="header is-align-center">
-                    <h1 class="heading_h1">Le Club</h1>
-                    <p class="subheading">Club cyclisme Fondé en 1952:</p>
-                </div>
-            </div>
+                <!-- Rayons fluides -->
+                <line x1="100" y1="10" x2="100" y2="190" stroke="var(--terracotta)" stroke-width="2" />
+                <line x1="10" y1="100" x2="190" y2="100" stroke="var(--terracotta)" stroke-width="2" />
+                <line x1="40" y1="40" x2="160" y2="160" stroke="var(--terracotta)" stroke-width="1.5" />
+                <line x1="160" y1="40" x2="40" y2="160" stroke="var(--terracotta)" stroke-width="1.5" />
+            </svg>
         </div>
-    </header>
-
-    <section id="agenda" class="section is-secondary">
-        <div class="container">
-            <div class="header">
-                <div class="heading_h1">Présentation</div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section">
-        <div class="container">
-            <div id="membre" class="header">
-                <div class="grid_4-col gap-xlarge">
-                    <div class="heading_h2">L’équipe qui fait avancer le club</div>
-                    <h2 class="heading_h3">Ensemble, on roule plus loin</h2>
-                    <div></div>
-                    <img src="./images/logo.png" width="190" height="180" alt="Logo Club">
-                </div>
-                <div class="grid_3-col gap-small">
-                    <p class="paragraph_large">Rencontrez nos membres : passionnés, accessibles et prêts à partager chaque sortie, que ce soit pour le plaisir ou la compétition.</p>
-                    <div></div>
-                </div>
-            </div>
-
-            <div class="grid_4-col gap-medium">
-                <div class="grid_1-col">
-                    <div class="position_relative image-ratio_3x2">
-                        <img class="image_cover position_absolute" src="./images/LEROY_Frederic.jpg" width="120" height="160" alt="image event" loading="lazy">
-                        <div class="overlay_opacity-middle is-inverse"></div>
-                    </div>
-                    <div class="position_relative padding_small z-index_2">
-                        <div class="heading_h5 text-align_right margin-bottom_none">Frederic LEROY</div>
-                        <div class="paragraph_small text-align_right">Président Club</div>
-                        <div class="paragraph_small text-align_right">Educateur VTT</div>
-                    </div>
-                </div>
-                <div class="grid_1-col">
-                    <div class="position_relative image-ratio_3x2">
-                        <img class="image_cover position_absolute" src="./images/GIRARDOT_Chantal.jpg" width="384" height="256" alt="image " loading="lazy">
-                        <div class="overlay_opacity-middle is-inverse"></div>
-                    </div>
-                    <div class="position_relative padding_small z-index_2">
-                        <div class="heading_h5 text-align_right margin-bottom_none">Chantal GIRARDOT</div>
-                        <div class="paragraph_small text-align_right">Trésoriere Club</div>
-                    </div>
-                </div>
-
-                <div class="grid_1-col">
-                    <div class="position_relative image-ratio_3x2">
-                        <img class="image_cover position_absolute" src="./images/inconnu.jpg" width="384" height="256" alt="display of mountain biking gear" data-aisg-image-id="33799d93-546a-463c-82ab-2fc8604d16bb" loading="lazy">
-                        <div class="overlay_opacity-middle is-inverse"></div>
-                    </div>
-
-                    <div class="position_relative padding_small z-index_2">
-                        <div class="heading_h5 text-align_right margin-bottom_none">Iconnu</div>
-                        <div class="paragraph_small text-align_right">Secrétaire Club</div>
-                    </div>
-                </div>
-
-
-                <div class="grid_1-col">
-                    <div class="position_relative image-ratio_3x2">
-                        <img class="image_cover position_absolute" src="./images/CARRU_Vincent.jpg" width="384" height="256" alt="bike shop interior" data-aisg-image-id="a32d3550-e43d-4d91-9895-7c2d56488a94" loading="lazy">
-                        <div class="overlay_opacity-middle is-inverse"></div>
-                    </div>
-
-                    <div class="position_relative padding_small z-index_2">
-                        <div class="heading_h5 text-align_right margin-bottom_none">Vincent CARRU</div>
-
-                        <div class="paragraph_small text-align_right">Encadrant Jeunes</div>
-                        <div class="paragraph_small text-align_right">Réseaux sociaux</div>
-                    </div>
-                </div>
-
-                <div class="grid_1-col">
-                    <div class="position_relative image-ratio_3x2">
-                        <img class="image_cover position_absolute" src="./images/TOLLET_Guillaume.jpg" width="384" height="256" alt="image of networking event (for a hr tech)" data-aisg-image-id="3e87782b-7612-47ad-ac31-8fc76f5071db" loading="lazy">
-                        <div class="overlay_opacity-middle is-inverse"></div>
-                    </div>
-                    <div class="position_relative padding_small z-index_2">
-                        <div class="heading_h5 text-align_right margin-bottom_none">Guillaume TOLLET</div>
-                        <div class="paragraph_small text-align_right">Organisation Technique</div>
-
-                    </div>
-                </div>
-
-                <div class="grid_1-col">
-                    <div class="position_relative image-ratio_3x2">
-                        <img class="image_cover position_absolute" src="./images/TOLLET_Axel.jpg" width="384" height="256" alt="image of networking event (for a hr tech)" data-aisg-image-id="3e87782b-7612-47ad-ac31-8fc76f5071db" loading="lazy">
-                        <div class="overlay_opacity-middle is-inverse"></div>
-                    </div>
-                    <div class="position_relative padding_small z-index_2">
-                        <div class="heading_h5 text-align_right margin-bottom_none">Axel TOLLET</div>
-                        <div class="paragraph_small text-align_right">Securité Course</div>
-                    </div>
-                </div>
-
-                <div class="grid_1-col">
-                    <div class="position_relative image-ratio_3x2">
-                        <img class="image_cover position_absolute" src="./images/LEROY_Emmanuel.jpg" width="384" height="256" alt="image of networking event (for a hr tech)" data-aisg-image-id="3e87782b-7612-47ad-ac31-8fc76f5071db" loading="lazy">
-                        <div class="overlay_opacity-middle is-inverse"></div>
-                    </div>
-                    <div class="position_relative padding_small z-index_2">
-                        <div class="heading_h5 text-align_right margin-bottom_none">Emmanuel LEROY</div>
-                        <div class="paragraph_small text-align_right">Engagement FFC</div>
-                        <div class="paragraph_small text-align_right">Reseaux sociaux</div>
-                    </div>
-                </div>
-
-                <div class="grid_1-col">
-                    <div class="position_relative image-ratio_3x2">
-                        <img class="image_cover position_absolute" src="./images/BERNABEO_Remo.jpg" width="384" height="256" alt="image of networking event (for a hr tech)" data-aisg-image-id="3e87782b-7612-47ad-ac31-8fc76f5071db" loading="lazy">
-                        <div class="overlay_opacity-middle is-inverse"></div>
-                    </div>
-                    <div class="position_relative padding_small z-index_2">
-                        <div class="heading_h5 text-align_right margin-bottom_none">Remo BERNABEO</div>
-                        <div class="paragraph_small text-align_right">Communication et Engagement UFOLEP</div>
-                        <div class="paragraph_small text-align_right">Reseaux sociaux</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-
-    <section id="evenement" class="section is-secondary">
-        <div class="container">
-            <p class="eyebrow margin-bottom_xsmall">À venir au club</p>
-            <h2 class="heading_h2">À vos vélos, prêts, partez !</h2>
-            <p class="subheading">Ne ratez pas nos prochaines sorties et événements.</p>
+        <div class="club-intro">
+            <h2>🚴 Le Vélo Club Santerre & Vermandois de Péronne</h2>
+            <p>Depuis ses débuts, notre club incarne l’esprit du vélo : convivialité, passion, entraide et fierté locale. Nous roulons ensemble, avec le cœur et les couleurs de Péronne.</p>
         </div>
 
-        <div class="grid_2-col gap-small">
-            <a id="w-node-_5ec757f3-9db0-b785-a38f-514ea784cd87-203751a1" href="" class="card-link on-secondary w-node-_87ec90e8-1343-7614-ebe5-6685f926e134-bf3a21eb">
-                <div class="image-ratio_3x2 position_relative flex_horizontal is-x-right radius_bottom-0">
-                    <img class="image_cover" src="./images/69023e0e0c459875d1c75911_48d8c8e7-8f06-401d-bc12-03042172a216.avif" width="608" height="405" alt="image of cycling community event" data-aisg-image-id="922ad311-bf4d-470e-b51a-7d08e0cc9392" loading="lazy">
-
-                    <div class="card position_absolute margin_xsmall">
-                        <div class="padding_xsmall text-align_center">
-                            <div class="paragraph_small margin-bottom_none">Ven</div>
-                            <div class="paragraph_xxlarge margin-bottom_none">
-                                <strong>09</strong>
-                            </div>
-                            <div class="paragraph_small margin-bottom_none">Fév 2025</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card_body">
-                    <div class="tag_group margin-bottom_xsmall">
-                        <div class="tag">
-                            <div>Route</div>
-                        </div>
-                    </div>
-                    <h4 class="heading_h3">Sortie longue avec Camille</h4>
-                    <div class="text-color_secondary margin-bottom_xsmall">Départ : Place du Chateau, Historial</div>
-                    <p>Roulez avec nous sur un parcours route convivial, tous niveaux bienvenus. Ambiance détendue assurée !</p>
-                    <div class="text-link text-decoration_none">
-                        <div>Détails</div>
-                    </div>
-                </div>
-            </a>
-
-            <a id="w-node-_1457c6a7-b19d-ba46-1e49-303cf11dfc34-203751a1" href="" class="card-link on-secondary w-node-_87ec90e8-1343-7614-ebe5-6685f926e14e-bf3a21eb">
-                <div class="image-ratio_3x2 position_relative flex_horizontal is-x-right radius_bottom-0">
-                    <img class="image_cover" src="./images/69023e0f5945ec1e8ed4db56_90890b20-a1ff-4a15-a911-826fa221656b.avif" width="608" height="416" alt="image of cycling community event" data-aisg-image-id="9e01c1fe-ae9d-43e0-ac04-bee22169d767" loading="lazy">
-                    <div class="card position_absolute margin_xsmall">
-                        <div class="padding_xsmall text-align_center">
-                            <div class="paragraph_small margin-bottom_none">Ven</div>
-                            <div class="paragraph_xxlarge margin-bottom_none">
-                                <strong>09</strong>
-                            </div>
-                            <div class="paragraph_small margin-bottom_none">Fév 2024</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card_body">
-                    <div class="tag_group margin-bottom_xsmall">
-                        <div class="tag">
-                            <div>VTT</div>
-                        </div>
-                    </div>
-
-                    <h4 class="heading_h3">Randonnée avec Morgan</h4>
-                    <div class="text-color_secondary margin-bottom_xsmall">Forêt de Péronne</div>
-                    <p>Explorez la forêt en VTT avec le groupe. Parcours varié, bonne humeur et découverte au rendez-vous.</p>
-                    <div class="text-link text-decoration_none">
-                        <div>Détails</div>
-                    </div>
-                </div>
-            </a>
-        </div>
-
-        <div class="button-group is-align-center">
-            <a href="" class="button is-secondary w-button">Voir tout</a>
-        </div>
-    </section>
-
-    <header id="Info" class="section is-accent-primary">
-        <div class="container is-small">
-            <div class="ix_hero-intro-up-scale is-step-1-hero-intro-up-scale">
-                <div class="header is-align-center">
-                    <h1 class="heading_h1">Infos Pratique</h1>
-                    <p class="subheading">Toutes les informations, pour pratiquer et nous rejoindre:</p>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <section id="agenda" class="section is-secondary">
-        <div class="container">
-            <div class="header">
-                <div class="heading_h1">Agenda</div>
-            </div>
-        </div>
-    </section>
-
-
-    <section id="adhesion" class="section">
-        <div class="container">
-            <div id="membre" class="header">
-                <div class="grid_4-col gap-xlarge">
-                    <div class="heading_h2">adhesion</div>
-                    <h2 class="heading_h3">Ensemble, on roule plus loin</h2>
-                    <div></div>
-                    <img src="./images/logo.png" width="190" height="180" alt="Logo Club">
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="section is-secondary">
-        <div class="container">
-            <div class="header">
-                <div class="heading_h1">Contactez-nous</div>
-                <h2 class="heading_h2">Envie de rouler avec nous ?</h2>
-                <p class="subheading">Écrivez-nous, on vous répond vite.</p>
-            </div>
-            <ul role="list" class="grid_2-col gap-small">
-                <li class="card on-secondary">
-                    <div class="card_body">
-                        <div class="icon is-large is-background margin-bottom_xsmall">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none">
-                                <path d="M5.25 6.75H18.75V17.25H5.25V6.75Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path>
-                                <path d="M5.25 6.75L12 12L18.75 6.75" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path>
-                            </svg>
-                        </div>
-                        <h4 class="heading_h5">E-mail</h4>
-                        <p class="text-color_secondary">Un message, une question ? Écrivez-nous !</p>
-                        <a class="text-link is-secondary">vcsvperonne@gmail.com</a>
-                    </div>
-                </li>
-                <li class="card on-secondary">
-                    <div class="card_body">
-                        <div class="icon is-large is-background margin-bottom_xsmall">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none">
-                                <path d="M12.5 18.25C16.2279 18.25 19.25 15.2279 19.25 11.5C19.25 7.77208 16.2279 4.75 12.5 4.75C8.77208 4.75 5.75 7.77208 5.75 11.5C5.75 12.6007 6.01345 13.6398 6.48072 14.5578L5 19L9.71819 17.6519C10.5664 18.0361 11.5082 18.25 12.5 18.25Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path>
-                            </svg>
-                        </div>
-                        <h4 class="heading_h5">Téléphone</h4>
-                        <p class="text-color_secondary">06 78 44 13 82</p>
-                        <a class="text-link is-secondary">03 22 84 37 54</a>
-                    </div>
-                </li>
+        <div class="club-values">
+            <h3>Nos valeurs</h3>
+            <ul>
+                <li>🎉 Festivité : chaque sortie est une célébration</li>
+                <li>🔧 Technique : sécurité, précision et partage de savoir</li>
+                <li>🧑‍🤝‍🧑 Inclusivité : jeunes, experts, curieux… tous sont les bienvenus</li>
             </ul>
         </div>
+
+        <div class="club-team">
+            <h3>Équipe dirigeante</h3>
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="images/LEROY_Frederic.jpg" alt="Président du club">
+                    <h4>Frédéric Leroy</h4>
+                    <p>46 ans</p>
+                    <p>Manutentionnaire</p>
+                    <p>Président- éducateur VTT</p>
+                </div>
+                <div class="team-member">
+                    <img src="images/CARRU_Vincent.jpg" alt="Vice-présidente">
+                    <h4>Vincent Carru</h4>
+                    <p>46 ans</p>
+                    <p>??</p>
+                    <p>Vice-président – Encadrant Jeunes</p>
+                </div>
+                <div class="team-member">
+                    <img src="images/GIRARDOT_Chantal.jpg" alt="Responsable visuel">
+                    <h4>Chantal Girardot</h4>
+                    <p>Retraitée</p>
+                    <p>Tresoriere</p>
+                </div>
+            </div>
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="images/LEROY_Emmanuel.jpg" alt="Responsable visuel">
+                    <h4>Emmanuel Leroy</h4>
+                    <p>47 ans</p>
+                    <p>Electricien automaticien</p>
+                    <p>Responsable visuel – Maillots, affiches, identité</p>
+                </div>
+                <div class="team-member">
+                    <img src="images/BERNABEO_Remo.jpg" alt="Responsable visuel">
+                    <h4>Rémo Bernabéo</h4>
+                    <p>46 ans</p>
+                    <p>46 ans</p>
+                    <p>Secretaire</p>
+                </div>
+                <div class="team-member">
+                    <img src="images/TOLLET_Guillaume.jpg" alt="Responsable visuel">
+                    <h4>Guillaume Tollet</h4>
+                    <p>46 ans</p>
+                    <p>46 ans</p>
+                    <p>Responsable securité</p>
+                </div>
+            </div>
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="images/TOLLET_Axel.jpg" alt="Responsable visuel">
+                    <h4>Axel Tollet</h4>
+                    <p>46 ans</p>
+                    <p>46 ans</p>
+                    <p>Responsable Organisation</p>
+                </div>
+                <div class="team-member">
+                    <img src="images/ROLLIN_Sandrine.jpg" alt="Responsable visuel">
+                    <h4>Sandrine Rollin</h4>
+                    <p>46 ans</p>
+                    <p>Secretaire</p>
+                </div>
+                <div class="team-member">
+                    <img src="images/PELLETIER_David.jpg" alt="Responsable visuel">
+                    <h4>David Pelletier</h4>
+                    <p>46 ans</p>
+                    <p>46 ans</p>
+                    <p>Responsable securité</p>
+                </div>
+            </div>
+        </div>
+        <h2>🚴 Le Club Cycliste de Péronne <span class="badge">Depuis 1952</span></h2>
     </section>
 
-    <footer class="footer is-inverse">
-        <div class="container">
-            <div class="grid_6-col gap-medium">
-                <a class="logo">
-                    <div class="nav_logo-icon">
-                        <img src="./images/logo.png" width="90" height="80" alt="Logo Club">
-                    </div>
-                    <div data-brand-name="true" class="paragraph_xlarge margin-bottom_none text_all-caps">VCSV Péronne</div>
-                </a>
-                <ul role="list" class="margin-bottom_none">
-                    <li>
-                        <h2 class="heading_h4 text-color_primary">Club</h2>
-                    </li>
-                    <li>
-                        <a href="#acceuil" class="footer_link on-inverse">
-                            <div>Accueil</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#evenement" class="footer_link on-inverse">
-                            <div>Événements</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#membre" class="footer_link on-inverse">
-                            <div>Membres</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#contact" class="footer_link on-inverse">
-                            <div>Contact</div>
-                        </a>
-                    </li>
-                </ul>
-
-                <ul role="list" class="margin-bottom_none">
-                    <li>
-                        <h2 class="heading_h4 text-color_primary">Route</h2>
-                    </li>
-                    <li>
-                        <a href="" class="footer_link on-inverse">
-                            <div>Sorties</div>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="" class="footer_link on-inverse">
-                            <div>Course</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="" class="footer_link on-inverse">
-                            <div>Loisir</div>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="" class="footer_link on-inverse">
-                            <div>Agenda</div>
-                        </a>
-                    </li>
-                </ul>
-
-                <ul role="list" class="margin-bottom_none">
-                    <li>
-                        <h2 class="heading_h4 text-color_primary">VTT</h2>
-                    </li>
-                    <li>
-                        <a href="" class="footer_link on-inverse">
-                            <div>Parcours</div>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="" class="footer_link on-inverse">
-                            <div>Jeunes</div>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="" class="footer_link on-inverse">
-                            <div>Adultes</div>
-                        </a>
-                    </li>
-                </ul>
-
-
-                <ul role="list" class="margin-bottom_none">
-                    <li>
-                        <h2 class="heading_h4 text-color_primary">Infos</h2>
-                    </li>
-                    <li>
-                        <a href="" class="footer_link on-inverse">
-                            <div>Partenaires</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="" class="footer_link on-inverse">
-                            <div>Règlement</div>
-                        </a>
-                    </li>
-                </ul>
+    <section class="timeline-section">
+        <!-- Courbe décorative en bas de section -->
+        <div class="svg-curve">
+            <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+                <path d="M0,0 C480,100 960,0 1440,100 L1440,0 L0,0 Z" fill="var(--or-peronne)"></path>
+            </svg>
+        </div>
+        <h3>📜 Frise historique</h3>
+        <div class="timeline-container">
+            <div class="timeline-item" data-icon="🚴">
+                <div class="timeline-date">1952</div>
+                <div class="timeline-content">
+                    <h4>Fondation du club</h4>
+                    <p>Le club a été fondé en octobre 1952 par Jean PERDIGEON et Ernest RUFFIN (sur la photo).</p>
+                    <img src="images/ROLLIN_Sandrine.jpg" style="max-width: 150px; justify-items: right;" alt="Premier président">
+                </div>
             </div>
-
-            <div class="footer_bottom margin-top_medium">
-                <ul role="list" aria-label="Social media links" class="footer_icon-group margin-left_auto">
-                    <li class="margin-bottom_none">
-                        <a href="https://www.facebook.com/VeloClubSanterreVermandois" class="footer_icon-link">
-                            <svg width="100%" height="100%" viewBox="0 0 16 16">
-                                <path d="M16,8.048a8,8,0,1,0-9.25,7.9V10.36H4.719V8.048H6.75V6.285A2.822,2.822,0,0,1,9.771,3.173a12.2,12.2,0,0,1,1.791.156V5.3H10.554a1.155,1.155,0,0,0-1.3,1.25v1.5h2.219l-.355,2.312H9.25v5.591A8,8,0,0,0,16,8.048Z" fill="currentColor"></path>
-                            </svg>
-                            <div class="screen-reader">Facebook</div>
-                        </a>
-                    </li>
-                </ul>
+            <div class="timeline-item" data-icon="📍">
+                <div class="timeline-date">2005</div>
+                <div class="timeline-content">
+                    <h4>Première sortie régionale</h4>
+                    <p>Participation à la randonnée des Hauts-de-France.</p>
+                </div>
             </div>
-
-            <div class="divider margin-top_xsmall margin-bottom_xsmall"></div>
-
-            <div class="footer_bottom">
-                <div class="text-color_secondary">Tous droits réservés © 2025 VCSV Péronne</div>
+            <div class="timeline-item" data-icon="👧">
+                <div class="timeline-date">2019</div>
+                <div class="timeline-content">
+                    <h4>Orientation du club vers le VTT X-country</h4>
+                    <p>Ateliers jeunesse et parcours adaptés.</p>
+                </div>
+            </div>
+            <div class="timeline-item" data-icon="🎨">
+                <div class="timeline-date">2020</div>
+                <div class="timeline-content">
+                    <h4>Identité visuelle modernisée</h4>
+                    <p>Maillots et affiches avec courbes du logo et textures techniques.</p>
+                </div>
+            </div>
+            <div class="timeline-item" data-icon="📺">
+                <div class="timeline-date">2020</div>
+                <div class="timeline-content">
+                    <h4>Plateforme numérique & YouTube</h4>
+                    <p>Validation numérique et lancement des vidéos club.</p>
+                </div>
             </div>
         </div>
 
+        <!-- SVG décoratif -->
+        <div class="timeline-svg-background">
+            <svg viewBox="0 0 1440 200" preserveAspectRatio="none">
+                <path d="M0,100 C360,0 1080,200 1440,100 L1440,200 L0,200 Z" fill="var(--or-peronne)" opacity="0.1"></path>
+            </svg>
+        </div>
+    </section>
+
+    <section id="entrainement" class="section-entrainements">
+        <h2>📅 Entrainements</h2>
+        <p>Rejoignez-nous sur les routes de Péronne et au-delà !</p>
+
+        <div class="event-grid">
+
+
+            <div class="event-card">
+                <div class="event-icon">🚴</div>
+                <h3>Entrainement jeunes – VTT</h3>
+                <p>📅 tous les Mercredis à ⏰ 14h<br>📍Face au college BERANGER<br>🎯 Pour les 5–17 ans</p>
+            </div>
+            <div class="event-card">
+                <div class="event-icon">🚴</div>
+                <h3>Entrainement jeunes – VTT</h3>
+                <p>📅 tous les Samedis à ⏰ 14h<br>📍 Face au college BERANGER<br>🎯 Pour les 5–17 ans</p>
+            </div>
+            <div class="event-card">
+                <div class="event-icon">🚴</div>
+                <h3>Entrainement adultes– Route</h3>
+                <p>📅 tous les Dimanches à ⏰ 8h30<br>📍 Place de Péronne Historial<br>🎯 Niveau Adulte confirmé</p>
+            </div>
+        </div>
+
+        <div class="event-map">
+            <h3>🗺️ Departs des entrainements</h3>
+            <div id="map"></div>
+        </div>
+
+    </section>
+
+    <section id="evenement" class="section-evenements">
+        <h2>📅 Evenements</h2>
+        <p>Organisation, festivités… retrouvez-nous et venez participez !</p>
+
+        <div class="event-grid">
+            <div class="event-card">
+                <div class="event-icon">🚴</div>
+                <h3>Prix Max COTTRELLE– FFC</h3>
+                <p>📍 (le)Ronssoy<br>⏰ Dimanches 07 mars 2026 à 14h30</p>
+                <p>Route<br>OPEN 2-3 / ACCESS 1-2-3-4</p>
+                <a href="./other/ronssoy.html" class="filtre-btn" target="_blank">Détails</a>
+            </div>
+
+            <div class="event-card">
+                <div class="event-icon">🚴</div>
+                <h3>Prix du parc du CAM– FFC</h3>
+                <p>📍 Péronne 80200<br>⏰ Dimanches 29 mars 2026 à 12h30</p>
+                <p>VTT X-Country<br>Toutes categories</p>
+                <a href="./other/ronssoy.html" class="filtre-btn" target="_blank">Détails</a>
+            </div>
+            <div class="event-card">
+                <div class="event-icon">🚴</div>
+                <h3>Prix du parc Zac la Chapelette– FFC</h3>
+                <p>📍 Péronne 80200<br>⏰ Dimanches 29 mai 2026 à 12h30</p>
+                <p>Route<br>U15 / U17 / ACCESS 1-2-3-4</p>
+                <a href="./other/ronssoy.html" class="filtre-btn" target="_blank">Détails</a>
+            </div>
+            <div class="event-card">
+                <div class="event-icon">🚴</div>
+                <h3>Prix des Remparts– FFC</h3>
+                <p>📍 Péronne 80200<br>⏰ Dimanches 29 mars 2026 à 12h30</p>
+                <p>VTT X-Country<br>Toutes categories</p>
+                <a href="./other/ronssoy.html" class="filtre-btn" target="_blank">Détails</a>
+            </div>
+        </div>
+        <div class="event-grid">
+            <div class="event-card">
+                <div class="event-icon">🚴</div>
+                <h3>La Flamicourtoise– FFC</h3>
+                <p>📍 Doingt/Flamicourt 80200<br>⏰ Dimanches 06 juin 2026 dés 7h30</p>
+                <p>Route / VTT / Marche<br>tous publics</p>
+                <a href="./other/ronssoy.html" class="filtre-btn" target="_blank">Détails</a>
+            </div>
+
+            <div class="event-card">
+                <div class="event-icon">🚴</div>
+                <h3>Carnaval de Peronne</h3>
+                <p>📍 Péronne 80200<br>⏰ Dimanches 29 mars 2026 à 15h00</p>
+                <p>Loisir<br>Tous le monde</p>
+                <a href="./other/ronssoy.html" class="filtre-btn" target="_blank">Détails</a>
+            </div>
+            <div class="event-card">
+                <div class="event-icon">🚴</div>
+                <h3>Prix de la ville– FFC</h3>
+                <p>📍 Péronne 80200<br>⏰ Dimanches 29 mai 2026 à 12h30</p>
+                <p>Route<br>Dames toutes categories</p>
+                <a href="./other/ronssoy.html" class="filtre-btn" target="_blank">Détails</a>
+            </div>
+            <div class="event-card">
+                <div class="event-icon">🚴</div>
+                <h3>Salons des associations</h3>
+                <p>📍 Péronne 80200<br>⏰ samedi courant septembre 2026 de 10h à 16h30</p>
+                <p>forum<br>Tous publics</p>
+                <a href="./other/ronssoy.html" class="filtre-btn" target="_blank">Détails</a>
+            </div>
+        </div>
+       
+        <!-- SVG décoratif -->
+        <div class="event-svg-background">
+            <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+                <path d="M0,60 C480,0 960,120 1440,60 L1440,120 L0,120 Z" fill="var(--or-peronne)" opacity="0.1"></path>
+            </svg>
+        </div>
+    </section>
+
+
+    <section id="visuels" class="section-visuels">
+        <h2>🎨 Visuels du Club</h2>
+        <p>Découvrez nos maillots, affiches, icônes et animations inspirés de l’identité de Péronne et du mouvement cycliste.</p>
+
+        <div class="visuel-grid">
+            <div class="visuel-item">
+                <img src="images/maillot-technique.jpg" alt="Maillot technique">
+                <p>Maillot technique – bleu & or</p>
+            </div>
+            <div class="visuel-item">
+                <img src="images/poster-festif.jpg" alt="Poster festif">
+                <p>Affiche festive – mascotte & courbes</p>
+            </div>
+            <div class="visuel-item">
+                <img src="images/animation-logo.svg" alt="Animation logo">
+                <p>Logo animé – courbes en mouvement</p>
+            </div>
+        </div>
+
+        <!-- SVG décoratif -->
+        <div class="visuel-svg-background">
+            <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+                <path d="M0,60 C480,0 960,120 1440,60 L1440,120 L0,120 Z" fill="var(--or-peronne)" opacity="0.1"></path>
+            </svg>
+        </div>
+    </section>
+
+    <section id="galerie" class="section-galerie">
+        <h2>📸 Galerie du Club</h2>
+        <p>Revivez nos plus beaux moments à vélo : sorties, événements festifs, ateliers techniques et aventures locales.</p>
+
+        <div class="galerie-filtres">
+            <button class="filtre-btn active" data-filtre="all">Tous</button>
+            <button class="filtre-btn" data-filtre="festive">🎉 Festive</button>
+            <button class="filtre-btn" data-filtre="technique">🔧 Technique</button>
+            <button class="filtre-btn" data-filtre="jeunesse">👧 Jeunesse</button>
+        </div>
+
+        <div class="galerie-grid">
+            <div class="galerie-item festive">
+                <img src="images/sortie-festive.jpg" alt="Sortie festive">
+                <p>Sortie déguisée de printemps</p>
+            </div>
+            <div class="galerie-item technique">
+                <img src="images/atelier-freinage.jpg" alt="Atelier freinage">
+                <p>Atelier freinage & sécurité</p>
+            </div>
+            <div class="galerie-item jeunesse">
+                <img src="images/jeunes-vtt.jpg" alt="Jeunes en VTT">
+                <p>Parcours VTT junior</p>
+            </div>
+            <div class="galerie-item festive">
+                <img src="fete-club.jpg" alt="Fête du club">
+                <p>Fête annuelle – ambiance garantie !</p>
+            </div>
+            <div class="galerie-item technique">
+                <img src="sortie-colline.jpg" alt="Sortie colline">
+                <p>Sortie technique en terrain vallonné</p>
+            </div>
+            <div class="galerie-item jeunesse">
+                <img src="atelier-jeunes.jpg" alt="Atelier jeunes">
+                <p>Atelier ludique pour les 8–12 ans</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="ressources" class="section-ressources">
+        <h2>📚 Ressources du Club</h2>
+        <p>Des guides pratiques, des vidéos pédagogiques et des documents utiles pour rouler en toute sécurité et avec le sourire.</p>
+
+        <div class="ressources-grid">
+            <div class="ressource-card">
+                <h3>📄 Guide technique</h3>
+                <p>PDF détaillé sur les parcours, niveaux et consignes de sécurité.</p>
+                <a href="guide-technique.pdf" class="btn-ressource" download>Télécharger</a>
+            </div>
+
+            <div class="ressource-card">
+                <h3>🎨 Affiches imprimables</h3>
+                <p>Visuels festifs et jeunesse en haute résolution (PNG, PDF).</p>
+                <a href="affiches.zip" class="btn-ressource" download>Télécharger</a>
+            </div>
+
+            <div class="ressource-card">
+                <h3>🌀 Logo animé</h3>
+                <p>Version SVG animée du logo avec courbes et mouvement cycliste.</p>
+                <a href="logo-anime.svg" class="btn-ressource" download>Télécharger</a>
+            </div>
+        </div>
+
+        <!-- SVG décoratif -->
+        <div class="ressource-svg-background">
+            <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+                <path d="M0,60 C480,0 960,120 1440,60 L1440,120 L0,120 Z" fill="var(--or-peronne)" opacity="0.1"></path>
+            </svg>
+        </div>
+
+
+
+
+
+
+        <div class="ressources-grid">
+            <div class="ressource-card">
+                <h3>🔧 Fiches techniques</h3>
+
+                <ul>
+                    <li><a href="#fiche-freinage">Réglage des freins</a></li>
+                    <li><a href="#fiche-crevaison">Réparation d’une crevaison</a></li>
+                    <li><a href="#fiche-eclairage">Éclairage et visibilité</a></li>
+                    <li><a href="#fiche-meteo">Rouler par temps humide</a></li>
+                </ul>
+            </div>
+
+            <div class="ressource-card">
+                <h3>🎥 Vidéos pédagogiques</h3>
+                <ul>
+                    <li><a href="#video-securite">Sécurité à vélo – les bons réflexes</a></li>
+                    <li><a href="#video-jeunes">Atelier jeunesse – apprendre en s’amusant</a></li>
+                    <li><a href="#video-maillot">Création du maillot – coulisses graphiques</a></li>
+                </ul>
+            </div>
+
+            <div class="ressource-card">
+                <h3>📄 Documents officiels</h3>
+                <ul>
+                    <li><a href="#statuts">Statuts du club</a></li>
+                    <li><a href="#reglement">Règlement intérieur</a></li>
+                    <li><a href="#charte">Charte du cycliste</a></li>
+                    <li><a href="#autorisation-parentale">Autorisation parentale (jeunes)</a></li>
+                </ul>
+            </div>
+            <div class="ressource-card">
+                <h3>📄 Documents officiels</h3>
+                <ul>
+                    <li><a href="#statuts">Statuts du club</a></li>
+                    <li><a href="#reglement">Règlement intérieur</a></li>
+                    <li><a href="#charte">Charte du cycliste</a></li>
+                    <li><a href="#autorisation-parentale">Autorisation parentale (jeunes)</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="membres" class="section-membres">
+        <h2>🧑‍🤝‍🧑 Trombinoscope</h2>
+        <p>Bienvenue dans l’espace membres du club. Ici, on partage, on s’identifie, et on célèbre notre passion commune.</p>
+
+        <div class="galerie-filtres">
+            <button class="filtre-btn active" data-filtre2="all">Tous</button>
+            <button class="filtre-btn" data-filtre2="adulte">🎉 Adultes</button>
+            <button class="filtre-btn" data-filtre2="jeune">🔧 Jeunes</button>
+            <button class="filtre-btn" data-filtre2="route">👧 Routiers</button>
+            <button class="filtre-btn" data-filtre2="vtt">👧 Vttiste</button>
+            <button class="filtre-btn" data-filtre2="benevole">👧 Bénévoles</button>
+        </div>
+
+
+        <div class="membre-trombinoscope">
+
+            <div class="trombi-grid">
+                <div class="trombi-item adulte">
+                    <img src="membre1.jpg" alt="Membre 1">
+                    <h4>Élodie “Turbo”</h4>
+                    <p>Spécialiste des sprints</p>
+                </div>
+                <div class="trombi-item adulte">
+                    <img src="membre2.jpg" alt="Membre 2">
+                    <h4>Marc “Le mécano”</h4>
+                    <p>Réparateur en chef</p>
+                </div>
+                <div class="trombi-item vtt">
+                    <img src="membre3.jpg" alt="Membre 3">
+                    <h4>Julie “Mascotte”</h4>
+                    <p>Ambassadrice jeunesse</p>
+                </div>
+                <div class="trombi-item adulte">
+                    <img src="membre1.jpg" alt="Membre 1">
+                    <h4>Élodie “Turbo”</h4>
+                    <p>Spécialiste des sprints</p>
+                </div>
+                <div class="trombi-item adulte">
+                    <img src="membre2.jpg" alt="Membre 2">
+                    <h4>Marc “Le mécano”</h4>
+                    <p>Réparateur en chef</p>
+                </div>
+                <div class="trombi-item vtt">
+                    <img src="membre3.jpg" alt="Membre 3">
+                    <h4>Julie “Mascotte”</h4>
+                    <p>Ambassadrice jeunesse</p>
+                </div>
+                <div class="trombi-item adulte">
+                    <img src="membre1.jpg" alt="Membre 1">
+                    <h4>Élodie “Turbo”</h4>
+                    <p>Spécialiste des sprints</p>
+                </div>
+                <div class="trombi-item adulte">
+                    <img src="membre2.jpg" alt="Membre 2">
+                    <h4>Marc “Le mécano”</h4>
+                    <p>Réparateur en chef</p>
+                </div>
+                <div class="trombi-item vtt">
+                    <img src="membre3.jpg" alt="Membre 3">
+                    <h4>Julie “Mascotte”</h4>
+                    <p>Ambassadrice jeunesse</p>
+                </div>
+                <div class="trombi-item adulte">
+                    <img src="membre1.jpg" alt="Membre 1">
+                    <h4>Élodie “Turbo”</h4>
+                    <p>Spécialiste des sprints</p>
+                </div>
+                <div class="trombi-item adulte">
+                    <img src="membre2.jpg" alt="Membre 2">
+                    <h4>Marc “Le mécano”</h4>
+                    <p>Réparateur en chef</p>
+                </div>
+                <div class="trombi-item vtt">
+                    <img src="membre3.jpg" alt="Membre 3">
+                    <h4>Julie “Mascotte”</h4>
+                    <p>Ambassadrice jeunesse</p>
+                </div>
+                <div class="trombi-item adulte">
+                    <img src="membre1.jpg" alt="Membre 1">
+                    <h4>Élodie “Turbo”</h4>
+                    <p>Spécialiste des sprints</p>
+                </div>
+                <div class="trombi-item adulte">
+                    <img src="membre2.jpg" alt="Membre 2">
+                    <h4>Marc “Le mécano”</h4>
+                    <p>Réparateur en chef</p>
+                </div>
+                <div class="trombi-item vtt">
+                    <img src="membre3.jpg" alt="Membre 3">
+                    <h4>Julie “Mascotte”</h4>
+                    <p>Ambassadrice jeunesse</p>
+                </div>
+                <div class="trombi-item adulte">
+                    <img src="membre1.jpg" alt="Membre 1">
+                    <h4>Élodie “Turbo”</h4>
+                    <p>Spécialiste des sprints</p>
+                </div>
+                <div class="trombi-item adulte">
+                    <img src="membre2.jpg" alt="Membre 2">
+                    <h4>Marc “Le mécano”</h4>
+                    <p>Réparateur en chef</p>
+                </div>
+                <div class="trombi-item vtt">
+                    <img src="membre3.jpg" alt="Membre 3">
+                    <h4>Julie “Mascotte”</h4>
+                    <p>Ambassadrice jeunesse</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="membre-temoignages">
+            <h3>💬 Témoignages</h3>
+            <blockquote>
+                “Rouler avec le club, c’est comme pédaler dans la bonne humeur !” – Frderic, membre depuis 2012
+            </blockquote>
+            <blockquote>
+                “J’ai appris à réparer mon vélo tout en m’amusant. Merci les ateliers !” – Léa, section jeunesse
+            </blockquote>
+        </div>
+    </section>
+
+    <section id="sponsors" class="section-galerie">
+        <h2>📸 Sponsors du Club</h2>
+        <p>Revivez nos plus beaux moments à vélo : sorties, événements festifs, ateliers techniques et aventures locales.</p>
+
+        
+        <div class="galerie-grid">
+            <div class="galerie-item festive">
+                <img src="images/sortie-festive.jpg" alt="Sortie festive">
+                <p>Sortie déguisée de printemps</p>
+            </div>
+            <div class="galerie-item technique">
+                <img src="images/atelier-freinage.jpg" alt="Atelier freinage">
+                <p>Atelier freinage & sécurité</p>
+            </div>
+            <div class="galerie-item jeunesse">
+                <img src="images/jeunes-vtt.jpg" alt="Jeunes en VTT">
+                <p>Parcours VTT junior</p>
+            </div>
+            <div class="galerie-item festive">
+                <img src="fete-club.jpg" alt="Fête du club">
+                <p>Fête annuelle – ambiance garantie !</p>
+            </div>
+            <div class="galerie-item technique">
+                <img src="sortie-colline.jpg" alt="Sortie colline">
+                <p>Sortie technique en terrain vallonné</p>
+            </div>
+            <div class="galerie-item jeunesse">
+                <img src="atelier-jeunes.jpg" alt="Atelier jeunes">
+                <p>Atelier ludique pour les 8–12 ans</p>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="contact" class="section-contact">
+        <h2>📬 Contact & Réseaux</h2>
+        <p>Une question, une envie de rejoindre le club, ou simplement nous saluer ? Écris-nous ou retrouve-nous en ligne !</p>
+
+        <div class="contact-grid">
+            <!-- Formulaire -->
+            <div class="contact-form">
+                <h3>✉️ Formulaire de contact</h3>
+                <form action="#" method="post">
+                    <input type="text" name="nom" placeholder="Votre nom" required>
+                    <input type="email" name="email" placeholder="Votre email" required>
+                    <textarea name="message" rows="5" placeholder="Votre message..." required></textarea>
+                    <button type="submit">Envoyer</button>
+                </form>
+            </div>
+
+            <!-- Coordonnées & Réseaux -->
+            <div class="contact-info">
+                <h3>📍 Coordonnées</h3>
+                <p>
+                    <strong>Vélo Club Santerre & Vermandois</strong><br>
+                    Hotel de ville<br>
+                    80200 Péronne<br>
+                    📞 03 22 84 37 54<br>
+                    📳 06 80 15 82 80<br>
+                    📧 vcsv.peronne@gmail.com
+                </p>
+            </div>
+
+            <div class="contact-social">
+                <h3>🌐 Réseaux sociaux</h3>
+                <p>
+                    <a href="https://www.facebook.com/VeloClubSanterreVermandois" target="_blank" class="social-icon">📘 Facebook</a><br>
+                    <a href="https://www.youtube.com/@vcsvperonne" target="_blank" class="social-icon">📺 Chaîne YouTube</a>
+                </p>
+            </div>
+        </div>
+
+        <!-- SVG décoratif -->
+        <div class="contact-svg-background">
+            <svg viewBox="0 0 1440 200" preserveAspectRatio="none">
+                <path d="M0,100 C360,0 1080,200 1440,100 L1440,200 L0,200 Z" fill="var(--or-peronne)" opacity="0.1"></path>
+            </svg>
+        </div>
+
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <h3>🚴 VCSV Péronne</h3>
+            <div class="footer-logo">
+
+                <p class="footer-badge">Depuis 1952</p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Club Cycliste de Péronne – Tous droits réservés</p>
+        </div>
+
+
     </footer>
-
 </body>
-
-
 </html>
+
+
+
+<script>
+    const map = L.map('map').setView([49.9506, 2.9569], 13); // Coordonnées de Péronne
+
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+
+    // Point de départ du club
+    L.marker([49.9590, 2.9525]).addTo(map)
+        .bindPopup('<strong>Adulte Route</strong><br>Départ des sorties')
+        .openPopup();
+    L.marker([49.9506, 2.9252]).addTo(map)
+        .bindPopup('<strong> jeunes VTT</strong><br>Départ des sorties')
+        .openPopup();
+
+    // Carte 1
+    const carte1 = L.map('carte1').setView([49.9506, 2.9569], 13);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(carte1);
+    L.marker([49.98718, 3.1650]).addTo(carte1).bindPopup('Ronsoy').openPopup();
+    L.marker([49.93110, 2.94055]).addTo(carte1).bindPopup('Rempart').openPopup();
+    L.marker([49.92649, 2.92626]).addTo(carte1).bindPopup('Cam').openPopup();
+    L.marker([49.91153, 2.92577]).addTo(carte1).bindPopup('Zac la chapelette').openPopup();
+    L.marker([49.93036, 2.93133]).addTo(carte1).bindPopup('carnaval').openPopup();
+    L.marker([49.93595, 2.94293]).addTo(carte1).bindPopup('Assos en folie').openPopup();
+    L.marker([49.92737, 2.94479]).addTo(carte1).bindPopup('La Flamicourtoise').openPopup();
+    
+
+    const buttons = document.querySelectorAll('[data-filtre]');
+    const button2 = document.querySelectorAll('[data-filtre2]');
+    const items = document.querySelectorAll('.galerie-item');
+    const item2 = document.querySelectorAll('.trombi-item');
+
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            const filter = button.getAttribute('data-filtre');
+
+            items.forEach(item => {
+                if (filter === 'all' || item.classList.contains(filter)) {
+                    item.style.display = '';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    });
+    button2.forEach(button => {
+        button.addEventListener('click', () => {
+            const filter = button.getAttribute('data-filtre2');
+
+            item2.forEach(item => {
+                if (filter === 'all' || item.classList.contains(filter)) {
+                    item.style.display = '';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    });
+
+</script>
