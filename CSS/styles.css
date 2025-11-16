@@ -1,4 +1,5 @@
-﻿:root {
+﻿/*----- variable global  ------*/
+:root {
     --bleu-peronne: #0055a5;
     --or-peronne: #f4c300;
     --jaune-peronne: #003f7d;
@@ -6,18 +7,16 @@
     --terracotta: #E2725B; 
 }
 
+/*------- fenetre de fond ------*/
 body {
     background: var(--terracotta);
-}
-
-.ligne {
-    display: flex;
-    justify-content: space-between; /* Sépare les deux éléments */
-    align-items: center; /* Aligne verticalement */
-    gap: 20px; /* Espace entre les blocs */
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
 }
 
 
+
+/*-------  MENU  --------*/
 .navbar {
     position: sticky;
     top: 0;
@@ -57,10 +56,14 @@ body {
             color: var(--blanc);
         }
 
-body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
+
+.ligne {
+    display: flex;
+    justify-content: space-between; /* Sépare les deux éléments */
+    align-items: center; /* Aligne verticalement */
+    gap: 20px; /* Espace entre les blocs */
 }
+
 
 .club-menu {
     background: var(--bleu-peronne);
@@ -157,33 +160,29 @@ body {
 }
 
 
-/*ACCEUIL*/
+/*-----  ACCEUIL  ------*/
 .hero {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     background: linear-gradient(180deg, var(--bleu-peronne) 40%, var(--or-peronne) 100%);
     color: white;
     padding: 4em 2em;
-    clip-path: ellipse(100% 100% at 50% 0%); /* effet de courbe inspiré du logo */
+    clip-path: ellipse(140% 100% at 50% 0%); /* effet de courbe inspiré du logo */
 }
 
 .hero-content {
-    flex: 1 1 50%;
-    max-width: 600px;
+    flex: 1 1 40%;
+    max-width: 1200px;
     padding: 4em;
 }
 
-    .hero-content h1 {
-        font-size: 2.5em;
-        margin-bottom: 0.5em;
-        text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
-    }
+   
 
     .hero-content p {
-        font-size: 1.2em;
-        margin-bottom: 1.5em;
+        font-size: 1.4em;
+        margin-bottom: 1.4em;
     }
 
 .cta-button {
@@ -214,6 +213,25 @@ body {
        
     }
 
+.or-bleu {
+    font-size: 2.5rem;
+    font-weight: bold;
+    background: linear-gradient(300deg, gold, var(--or-peronne), var(--jaune-peronne));
+    background-size: 600% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 14s linear infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 600% 50%;
+    }
+}
 /* Responsive */
 @media (max-width: 768px) {
     .hero {
@@ -224,14 +242,17 @@ body {
     }
 }
 
+/*-----  CLUB  ------*/
+
 .section-club {
-    background: linear-gradient(135deg, #003f7d 40%, var(--or-peronne) 100%);
+    background: linear-gradient(360deg, var(--bleu-peronne) 80%, var(--or-peronne) 100%);
     padding: 5em 2em;
     color: var(--blanc);
     font-family: 'Segoe UI', sans-serif;
     position: relative;
     overflow: hidden;
     z-index: 1;
+    clip-path: ellipse(140% 100% at 50% 100%); /* effet de courbe inspiré du logo */
 }
 
     .section-club h2 {
@@ -260,6 +281,7 @@ body {
     position: relative;
     z-index: 1;
 }
+
 
 .club-values ul {
     list-style: none;
@@ -351,10 +373,10 @@ body {
     }
 }
 
-
+/*-----  histoire  -----*/
 .timeline-section {
     position: relative;
-    background: linear-gradient(35deg, #003f7d 40%, var(--or-peronne) 100%);
+    background: radial-gradient(circle at top, #003f7d 0%, var(--bleu-peronne) 80%);
     color: var(--blanc);
     padding: 5em 2em;
     overflow: hidden;
@@ -469,9 +491,9 @@ body {
         height: 100%;
     }
 
-
+/*----  Entrainements  ----*/
 .section-entrainements {
-    background: linear-gradient(135deg, #003f7d 40%, var(--or-peronne) 100%);
+    background: linear-gradient(135deg, #003f7d 40%, var(--bleu-peronne) 100%);
     padding: 5em 2em;
     font-family: 'Segoe UI', sans-serif;
     color: var(--blanc);
@@ -479,9 +501,33 @@ body {
     overflow: hidden;
     text-align: center;
 }
+/* Texture diagonale subtile */
+    .section-entrainements::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: repeating-linear-gradient( 45deg, rgba(255,255,255,0.03), rgba(255,255,255,0.03) 2px, transparent 2px, transparent 20px );
+        z-index: 0;
+        pointer-events: none;
+    }
+    .section-entrainements h2 {
+        font-size: 2.2em;
+        color: var(--or-peronne);
+        margin-bottom: 0.5em;
+        text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+    }
+
+    .section-entrainements p {
+        font-size: 1.2em;
+        margin-bottom: 2em;
+        color: #e0e0e0;
+    }
 
 .section-evenements {
-    background: linear-gradient(35deg, #003f7d 40%, var(--or-peronne) 100%);
+    background: linear-gradient(135deg, #003f7d 40%, var(--bleu-peronne) 100%);
     padding: 5em 2em;
     font-family: 'Segoe UI', sans-serif;
     color: var(--blanc);
@@ -753,18 +799,7 @@ body {
     color: var(--blanc);
 }
 
-    /* Texture diagonale subtile */
-    .section-galerie::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-image: repeating-linear-gradient( 45deg, rgba(255,255,255,0.03), rgba(255,255,255,0.03) 2px, transparent 2px, transparent 20px );
-        z-index: 0;
-        pointer-events: none;
-    }
+   
 
     /* Titre et texte */
     .section-galerie h2 {
@@ -890,18 +925,19 @@ body {
 }
 
     /* Texture en grille fine */
-    .section-ressources::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-image: linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px);
-        background-size: 20px 20px;
-        z-index: 0;
-        pointer-events: none;
-    }
+/* Texture diagonale subtile */
+.section-ressources::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: repeating-linear-gradient( 45deg, rgba(255,255,255,0.03), rgba(255,255,255,0.03) 2px, transparent 2px, transparent 20px );
+    z-index: 0;
+    pointer-events: none;
+}
+
 
 
     .section-ressources h2 {
@@ -1021,18 +1057,7 @@ body {
     padding: 4em 2em;
     color: var(--blanc);
 }
-    /* Texture diagonale subtile */
-    .section-membres::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-image: repeating-linear-gradient( 45deg, rgba(255,255,255,0.03), rgba(255,255,255,0.03) 2px, transparent 2px, transparent 20px );
-        z-index: 0;
-        pointer-events: none;
-    }
+   
 
     .section-membres h2 {
         font-size: 2.2em;
@@ -1322,8 +1347,20 @@ body {
 /* Roue stylisée en fond */
 .background-wheel {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 25%;
+    left: 80%;
+    width: 220px;
+    height: 220px;
+    transform: translate(-50%, -50%);
+    opacity: 0.5;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.background-wheel2 {
+    position: absolute;
+    top: 25%;
+    left: 20%;
     width: 220px;
     height: 220px;
     transform: translate(-50%, -50%);
