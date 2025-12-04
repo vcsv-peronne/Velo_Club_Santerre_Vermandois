@@ -2,7 +2,6 @@
 :root {
     --bleu-peronne: #0055a5;
     --or-peronne: #f4c300;
-    --jaune-peronne: #003f7d;
     --blanc: #ffffff;
     --terracotta: #E2725B; 
 }
@@ -23,6 +22,7 @@ body {
     background: var(--bleu-peronne);
     z-index: 1000;
     padding: 1em 2em;
+   
 }
     .navbar::before {
         content: '';
@@ -70,10 +70,13 @@ body {
     position: relative;
 }
     .club-menu .img {
-        margin-top: -10px;
+        position: absolute;
+        margin-top: -20px;
         text-align: right;
-        max-width: 40px;
+        max-width: 58px;
         height: auto;
+        top: 0;
+        right: 0;
     }
 
     .club-menu .logo {
@@ -161,6 +164,21 @@ body {
 
 
 /*-----  ACCEUIL  ------*/
+.video-container {
+    width: 72px;
+    height: 91px;
+    overflow: hidden;
+    border: 2px solid #333;
+    cursor: pointer;
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
 .hero {
     display: flex;
     flex-wrap: wrap;
@@ -175,7 +193,7 @@ body {
 .hero-content {
     flex: 1 1 40%;
     max-width: 1200px;
-    padding: 4em;
+    padding: 3em;
 }
 
    
@@ -214,13 +232,14 @@ body {
     }
 
 .or-bleu {
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-weight: bold;
-    background: linear-gradient(300deg, gold, var(--or-peronne), var(--jaune-peronne));
+    background: linear-gradient(300deg, gold, var(--or-peronne), var(--bleu-peronne));
     background-size: 600% auto;
-    -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: shimmer 14s linear infinite;
+    animation: shimmer 14s linear infinite alternate-reverse;
+    text-align:center;
 }
 
 @keyframes shimmer {
@@ -231,6 +250,7 @@ body {
     100% {
         background-position: 600% 50%;
     }
+    
 }
 /* Responsive */
 @media (max-width: 768px) {
@@ -257,7 +277,7 @@ body {
 
     .section-club h2 {
         font-size: 2.5em;
-        margin-bottom: 0.5em;
+        margin-bottom: 1.5em;
         color: var(--or-peronne);
         text-align: center;
         text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
@@ -268,7 +288,9 @@ body {
     .section-club h3 {
         color: var(--blanc);
         font-size: 1.6em;
-        margin-top: 2em;
+        margin-top: 1em;
+        margin-bottom: 2em;
+        padding-left: 20px;
         position: relative;
         z-index: 1;
     }
@@ -277,11 +299,17 @@ body {
     font-size: 1.2em;
     max-width: 700px;
     margin: 0 auto;
+    padding-bottom: 3em;
     text-align: center;
     position: relative;
     z-index: 1;
 }
 
+.club-values{
+   border: solid var(--or-peronne) 6px;
+   border-radius: 20px;
+  
+}
 
 .club-values ul {
     list-style: none;
@@ -293,17 +321,18 @@ body {
 }
 
 .club-values li {
-    margin-bottom: 1em;
+    margin-bottom: 2em;
     font-size: 1.1em;
     padding-left: 1.5em;
+   
     position: relative;
 }
 
-    .club-values li::before {
+    .club-values li::after {
         content: '🚴';
-        position: absolute;
+        position: relative;
         left: 0;
-        font-size: 1.2em;
+        font-size: 1.8em;
     }
 
 .club-team .team-grid {
@@ -374,9 +403,17 @@ body {
 }
 
 /*-----  histoire  -----*/
+.svg-curve {
+    position: absolute;
+    top: 100px;
+    left: 30%;
+    width: 100%;
+    height: 120px;
+    z-index: 0;
+}
 .timeline-section {
     position: relative;
-    background: radial-gradient(circle at top, #003f7d 0%, var(--bleu-peronne) 80%);
+    background: radial-gradient(circle at left, var(--terracotta) 0%, var(--bleu-peronne) 80%);
     color: var(--blanc);
     padding: 5em 2em;
     overflow: hidden;
@@ -470,7 +507,7 @@ body {
 }
 
 .timeline-content p {
-    margin: 0;
+    margin: 3px;
     color: #e0e0e0;
     font-size: 1em;
 }
@@ -851,6 +888,7 @@ body {
     justify-content: center;
     position: relative;
     z-index: 1;
+  
 }
 
 .galerie-item {
@@ -860,6 +898,7 @@ body {
     border-radius: 10px;
     padding: 1em;
     max-width: 250px;
+
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -1176,7 +1215,7 @@ body {
     position: relative;
     background: radial-gradient(circle at center, #003f7d 0%, #002b5c 100%);
     color: var(--blanc);
-    padding: 5em 2em;
+    padding: 4em 2em;
     font-family: 'Segoe UI', sans-serif;
     text-align: center;
     overflow: hidden;
@@ -1193,7 +1232,7 @@ body {
 
     .section-contact p {
         font-size: 1.2em;
-        margin-bottom: 2em;
+        margin-bottom: 1em;
         color: #e0e0e0;
         position: relative;
         z-index: 1;
@@ -1202,20 +1241,20 @@ body {
 .contact-grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 5em;
-    justify-content: center;
+    gap: 5rem;
+    justify-content: space-evenly;
     position: relative;
     z-index: 1;
 }
 
-.contact-form,
+
 .contact-info {
     background: rgba(255,255,255,0.05);
-    border: 2px solid var(--or-peronne);
-    border-radius: 10px;
-    padding: 2em;
-    max-width: 400px;
-    flex: 1 1 300px;
+    border: 3px solid var(--or-peronne);
+    border-radius: 15px;
+    padding: 2em 1em 3em 1em;
+    max-width: 600px;
+    flex: 1 1 100px;
     transition: transform 0.3s ease;
 }
 
@@ -1224,55 +1263,22 @@ body {
         box-shadow: 0 0 20px rgba(244, 195, 0, 0.3);
     }
 
-    .contact-info h3, .contact-form h3 {
+    .contact-info h3 {
         color: var(--or-peronne);
-        margin-bottom: 0.5em;
+        margin-bottom: 0.7em;
+        font-size: 2em;
     }
 
 
-    .contact-info p, .contact-form p {
+    .contact-info p {
         color: #e0e0e0;
-        font-size: 1em;
+        font-size: 1.2em;
     }
-
-
-
-    .contact-form form {
-        display: flex;
-        flex-direction: column;
-        gap: 1em;
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-        padding: 0.8em;
-        border-radius: 6px;
-        border: none;
-        background: rgba(255,255,255,0.1);
-        color: var(--blanc);
-        font-size: 1em;
-    }
-
-    .contact-form button {
-        background: var(--or-peronne);
-        color: #003f7d;
-        padding: 0.8em;
-        border: none;
-        border-radius: 30px;
-        font-weight: bold;
-        cursor: pointer;
-        transition: background 0.3s ease;
-    }
-
-        .contact-form button:hover {
-            background: var(--blanc);
-            color: var(--bleu-peronne);
-        }
 
 
 
     .contact-info a {
-        color: var(--bleu-peronne);
+        color: var(--blanc);
         font-weight: bold;
         text-decoration: none;
     }
@@ -1303,6 +1309,7 @@ body {
     .contact-social h3 {
         color: var(--or-peronne);
         margin-bottom: 1em;
+        font-size: 2em;
     }
 
 
@@ -1347,8 +1354,8 @@ body {
 /* Roue stylisée en fond */
 .background-wheel {
     position: absolute;
-    top: 25%;
-    left: 80%;
+    top: 30%;
+    left: 92%;
     width: 220px;
     height: 220px;
     transform: translate(-50%, -50%);
@@ -1359,8 +1366,8 @@ body {
 
 .background-wheel2 {
     position: absolute;
-    top: 25%;
-    left: 20%;
+    top: 30%;
+    left: 8%;
     width: 220px;
     height: 220px;
     transform: translate(-50%, -50%);
@@ -1368,11 +1375,29 @@ body {
     z-index: 0;
     pointer-events: none;
 }
+.background-wheel3 {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.4;
+    z-index: 0;
+    pointer-events: none;
+}
+.background-wheel4 {
+    position: absolute;
+    top: 60%;
+    left: 63%;
+    transform: translate(-50%, -50%);
+    opacity: 0.4;
+    z-index: 0;
+    pointer-events: none;
+}
 
 .wheel-svg {
     width: 100%;
     height: 100%;
-    animation: rotateWheel 25s linear infinite;
+    animation: rotateWheel 15s linear infinite;
 }
 
 @keyframes rotateWheel {
@@ -1407,44 +1432,66 @@ body {
     box-shadow: 0 0 10px rgba(244, 195, 0, 0.3);
 }
 
-/*footer*/
+/*sponsor*/
+.btn-sponsor {
+    display: inline-block;
+    background: var(--or-peronne);
+    color: #003f7d;
+    padding: 0.5em 1em;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+    .btn-sponsor:hover {
+        background: var(--blanc);
+        color: var(--bleu-peronne);
+    }
+
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - */
+/* - - - - - - - - - - footer - - - - - - - - - - - */
+/* - - - - - - - - - - - - - - - - - - - - - - - - */
 .site-footer {
-    background: linear-gradient(135deg, #002b5c 40%, #003f7d 100%);
+    background: linear-gradient(135deg, #002b5c 40%, var(--bleu-peronne) 100%);
     color: var(--blanc);
-    padding: 4em 2em 2em;
-    position: relative;
+    padding: 20px;
     font-family: 'Segoe UI', sans-serif;
     overflow: hidden;
 }
 
 .footer-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 2em;
-    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
     z-index: 1;
 }
+    .footer-content .colonne1 {
+        display: flex;
+        align-items: center;
+    }
+    .footer-content .colonne3 {
+        display: flex;
+        flex-direction: column-reverse;
+    }
 
-.footer-logo h3 {
-    color: var(--or-peronne);
-    margin-bottom: 0.3em;
-}
-
-.footer-badge {
-    background: var(--or-peronne);
-    color: #003f7d;
-    display: inline-block;
-    padding: 0.3em 0.8em;
-    border-radius: 20px;
-    font-weight: bold;
-    font-size: 0.9em;
-}
+    .footer-badge {
+        background: var(--or-peronne);
+        color: var(--bleu-peronne);
+        display: inline-block;
+        padding: 0.4em 1em;
+        border-radius: 20px;
+        font-weight: bold;
+        font-size: 1em;
+    }
 
 
 .footer-bottom {
     text-align: center;
-    margin-top: 3em;
     font-size: 0.9em;
+    margin-top: 15px;
     color: #e0e0e0;
     position: relative;
     z-index: 1;

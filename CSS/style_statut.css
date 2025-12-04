@@ -1,0 +1,195 @@
+﻿:root {
+    --bleu-peronne: #0055a5;
+    --or-peronne: #f4c300;
+    --jaune-peronne: #003f7d;
+    --blanc: #ffffff;
+    --terracotta: #E2725B;
+}
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--bleu-peronne);
+    color: var(--terracotta);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+
+header {
+    background-color: var(--bleu-peronne);
+    color: var(--or-peronne);
+    padding: 1rem 1rem;
+    text-align: center;
+}
+
+    header h1 {
+        margin: 0;
+        font-size: 3.5rem;
+    }
+
+
+.subtitle {
+    font-size: 1.5rem;
+    color: var(--or-peronne);
+}
+
+main {
+    max-width:1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.article {
+    background: white;
+    border-left: 6px solid var(--or-peronne);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+   
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+
+    .article h2 {
+        color: var(--bleu-peronne);
+        margin-top: 0;
+    }
+
+.print-button-container {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+    .print-button-container button {
+        background-color: var(--or-peronne);
+        color: var(--bleu-peronne);
+        border: none;
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+        font-weight: bold;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+
+        .print-button-container button:hover {
+            background-color: #e0b93f;
+        }
+
+/*footer*/
+.site-footer {
+    background: linear-gradient(135deg, #002b5c 40%, var(--bleu-peronne) 100%);
+    color: var(--blanc);
+    padding: 20px;
+    font-family: 'Segoe UI', sans-serif;
+    overflow: hidden;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    z-index: 1;
+}
+
+    .footer-content .colonne1 {
+        display: flex;
+        align-items: center;
+    }
+
+    .footer-content .colonne3 {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+.footer-badge {
+    background: var(--or-peronne);
+    color: var(--bleu-peronne);
+    display: inline-block;
+    padding: 0.4em 1em;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+
+.footer-bottom {
+    text-align: center;
+    font-size: 0.9em;
+    margin-top: 15px;
+    color: #e0e0e0;
+    position: relative;
+    z-index: 1;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-logo {
+        margin-bottom: 2em;
+    }
+}
+/* Version imprimable */
+@media print {
+    header, footer, .print-button-container {
+        display: none;
+    }
+
+    body {
+        background: white;
+        color: black;
+    }
+
+    .article {
+        box-shadow: none;
+        border: none;
+    }
+}
+
+.bike-list {
+    list-style: none; /* enlever les puces par défaut */
+    padding-left: 0;
+}
+
+    .bike-list li {
+        position: relative;
+        padding-left: 2rem;
+    }
+
+        .bike-list li::before {
+            content: "🚲";
+            position: absolute;
+            left: 0;
+            color: var(--or-peronne); /* or doré */
+            font-size: 1.2rem;
+        }
+
+.text-column {
+    flex: 1; /* occupe l’espace disponible */
+}
+.image-column {
+    flex: 0 0 30%; /* fixe la largeur de l’image */
+}
+
+    .image-column img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+.two-columns {
+    display: flex;
+    gap: 3rem; /* espace entre les colonnes */
+    align-items: flex-start;
+    max-width: none;
+    margin: 4rem 2rem 1rem 4rem;
+    padding: 0 1rem;
+}
