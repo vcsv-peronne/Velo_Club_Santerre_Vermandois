@@ -1,0 +1,488 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Comment régler sa position sur le vélo</title>
+    <meta name="description" content="Fiche technique : régler sa position sur le vélo pour confort, performance et prévention des blessures." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --text: #ffffff;
+            --muted: #5b6677;
+            --accent: #1f7a8c;
+            --accent-2: #ff8a00;
+            --success: #2a9d8f;
+            --warning: #e76f51;
+            --shadow: 0 10px 30px rgba(20, 30, 50, 0.08);
+            --radius: 14px;
+            --bleu-peronne: #0055a5;
+            --or-peronne: #f4c300;
+            --blanc: #ffffff;
+            --terracotta: #E2725B;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            background: var(--bleu-peronne);
+            color: var(--text);
+            font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol", sans-serif;
+            line-height: 1.55;
+            margin: 0;
+            padding: 0;
+        }
+
+        .wrap {
+            margin: 0 auto;
+            padding: 28px 20px 60px;
+        }
+
+        header.hero {
+            background: linear-gradient(145deg, var(--bleu-peronne), var(--or-peronne));
+            border: 4px solid var(--or-peronne);
+            box-shadow: var(--shadow);
+            border-radius: var(--radius);
+            padding: 26px 24px;
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 20px;
+            align-items: center;
+        }
+
+        h1 {
+            font-family: Montserrat, Inter, sans-serif;
+            font-weight: 700;
+            letter-spacing: 0.2px;
+            margin: 0 0 10px 0;
+            font-size: clamp(28px, 5vw, 42px);
+            color: var(--or-peronne);
+        }
+
+        .subtitle {
+            color: white;
+            font-size: 15px;
+        }
+
+        .hero-figure {
+            width: 90%;
+            overflow: hidden;
+            border-radius: 12px;
+            border: 3px solid var(--or-peronne);
+            box-shadow: var(--shadow);
+        }
+
+            .hero-figure img {
+                width: 100%;
+                height: auto;
+                display: block;
+            }
+
+        main {
+            margin-top: 28px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 18px;
+        }
+
+        section.card {
+            background: var(--bleu-peronne);
+            border: 3px solid var(--or-peronne);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 20px;
+        }
+
+        h2 {
+            font-family: Montserrat, Inter, sans-serif;
+            font-weight: 700;
+            font-size: clamp(20px, 3.2vw, 26px);
+            margin: 0 0 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h3 {
+            font-weight: 700;
+            margin: 18px 0 6px;
+            font-size: 18px;
+        }
+
+        p {
+            margin: 8px 0 12px;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .note {
+            background: var(--success);
+            border: 1px dashed var(--terracotta);
+            padding: 12px;
+            border-radius: 10px;
+            color: #2d5368;
+        }
+
+        ul, ol {
+            margin: 8px 0 12px;
+            padding-left: 20px;
+        }
+
+        li {
+            margin: 6px 0;
+        }
+
+        strong {
+            font-weight: 700;
+        }
+
+        .meta {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-top: 12px;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #fff7ef;
+            color: #7a3b00;
+            border: 1px solid #ffd4a8;
+            padding: 8px 10px;
+            border-radius: 999px;
+            font-size: 14px;
+            box-shadow: 0 4px 12px rgba(255,138,0,0.15);
+        }
+
+        .tip {
+            background: var(--accent-2);
+            border: 1px solid #c9f2e9;
+            color: #21564d;
+        }
+
+        .warn {
+            background: var(--warning);
+            border: 1px solid #ffd9d3;
+            color: #6b2b24;
+        }
+
+        /* - - - - - - - - - - - - - - - - - - - - - - - - - */
+        /* - - - - - - - - - - footer - - - - - - - - - - - */
+        /* - - - - - - - - - - - - - - - - - - - - - - - - */
+        .site-footer {
+            background: linear-gradient(135deg, #002b5c 40%, var(--bleu-peronne) 100%);
+            color: var(--blanc);
+            padding: 20px;
+            font-family: 'Segoe UI', sans-serif;
+            overflow: hidden;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            z-index: 1;
+        }
+
+            .footer-content .colonne1 {
+                display: flex;
+                align-items: center;
+            }
+
+            .footer-content .colonne3 {
+                display: flex;
+                flex-direction: column-reverse;
+            }
+
+        .footer-badge {
+            background: var(--or-peronne);
+            color: var(--bleu-peronne);
+            display: inline-block;
+            padding: 0.4em 1em;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 1em;
+        }
+
+
+        .footer-bottom {
+            text-align: center;
+            font-size: 0.9em;
+            margin-top: 15px;
+            color: #e0e0e0;
+            position: relative;
+            z-index: 1;
+        }
+
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .footer-logo {
+                margin-bottom: 2em;
+            }
+        }
+
+
+
+
+        @media (max-width: 860px) {
+            header.hero {
+                grid-template-columns: 1fr;
+            }
+
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="wrap">
+        <header class="hero" role="banner" aria-label="Fiche technique de réglage de position sur le vélo">
+            <div>
+                <h1>Comment régler sa position sur le vélo</h1>
+                <p class="subtitle">Confort, performance et prévention des blessures — guide pratique pour cyclistes route, VTT et ville.</p>
+                <div class="meta" aria-label="Informations rapides">
+                    <span class="badge">📏 Méthode progressive</span>
+                    <span class="badge">🧰 Ajustements essentiels</span>
+                    <span class="badge">⏱️ 20–30 min</span>
+                </div>
+
+            </div>
+            <figure class="hero-figure">
+                <img src="../images/fiches/reglage_velo.png" alt="Cycliste ajustant hauteur de selle, vue latérale sur vélo route.">
+            </figure>
+        </header>
+
+        <main role="main">
+            <section class="card" aria-labelledby="intro-title">
+                <h2 id="intro-title">📝 Introduction</h2>
+                <p>Une position bien réglée est indispensable pour pédaler efficacement, réduire les douleurs (genoux, lombaires, nuque) et améliorer l’endurance. Ce guide vous accompagne pas à pas pour ajuster la selle, le guidon et les cales selon votre pratique et votre morphologie.</p>
+                <div class="note tip" role="note">
+                    <strong>Astuce:</strong> effectuez les réglages <em>progressivement</em> et testez-les sur 2–3 sorties avant de les valider.
+                </div>
+            </section>
+
+            <section class="card" aria-labelledby="steps-title">
+                <h2 id="steps-title">⚙️ Étapes clés de réglage</h2>
+
+                <div class="grid-2">
+                    <div>
+                        <h3>1) Hauteur de selle</h3>
+                        <ul>
+                            <li><strong>Repère:</strong> à la position de pédale la plus basse, la jambe est <em>légèrement fléchie</em> (pas complètement tendue).</li>
+                            <li><strong>Trop haut:</strong> bascule du bassin, douleurs lombaires et perte d’efficacité.</li>
+                            <li><strong>Trop bas:</strong> surcharge des genoux, cadence irrégulière.</li>
+                        </ul>
+                        <div class="note">
+                            <strong>Méthode rapide:</strong> mesurez votre entrejambe et multipliez par 0,883 pour obtenir une première estimation de hauteur de selle (axe pédalier → sommet de selle). Ajustez ensuite au ressenti.
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3>2) Recul de selle</h3>
+                        <ul>
+                            <li><strong>Alignement genou/pédale:</strong> manivelle à l’horizontale, la rotule doit s’aligner proche de l’axe de la pédale (méthode KOPS, repère de départ).</li>
+                            <li><strong>Trop en avant:</strong> pression accrue sur les genoux et les mains.</li>
+                            <li><strong>Trop en arrière:</strong> difficulté à passer en danseuse et à produire de la puissance.</li>
+                        </ul>
+                        <div class="note">
+                            <strong>Pratique:</strong> utilisez un fil à plomb depuis la rotule pour vérifier l’alignement au niveau de l’axe de pédale.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-2">
+                    <div>
+                        <h3>3) Hauteur et inclinaison du guidon</h3>
+                        <ul>
+                            <li><strong>Route sportive:</strong> poste de pilotage plus bas pour l’aérodynamisme; conservez bras détendus et épaules relâchées.</li>
+                            <li><strong>Cyclotourisme/ville:</strong> poste plus haut pour confort; regard ouvert et nuque sans tension.</li>
+                            <li><strong>Inclinaison:</strong> évitez l’inclinaison excessive qui charge les poignets; ajustez d’un à deux degrés selon ressenti.</li>
+                        </ul>
+                        <div class="note warn" role="note">
+                            <strong>Attention:</strong> si les mains s’engourdissent, vérifiez la hauteur du cintre, la largeur, le retour de potence et la pression des pneus.
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3>4) Position des cales/pédales</h3>
+                        <ul>
+                            <li><strong>Placement:</strong> la cale sous la partie la plus large du pied (tête des métatarses).</li>
+                            <li><strong>Rotation:</strong> alignez la cale avec l’axe longitudinal du pied; testez le <em>float</em> toléré par vos articulations.</li>
+                            <li><strong>Symétrie:</strong> répliquez le réglage sur les deux chaussures; marquez au feutre les positions pour suivi.</li>
+                        </ul>
+                        <div class="note tip">
+                            <strong>Confort:</strong> si douleur sous le pied, vérifiez semelles, rigidité de chaussure, et micro-ajustez la position (±2–3 mm).
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="card" aria-labelledby="practical-title">
+                <h2 id="practical-title">🎯 Conseils pratiques</h2>
+                <ul>
+                    <li><strong>Progression:</strong> modifiez un paramètre à la fois et testez sur 30–60 minutes.</li>
+                    <li><strong>Trace:</strong> notez hauteur de selle, recul, potence, inclinaison et cales pour revenir en arrière.</li>
+                    <li><strong>Maintenance:</strong> contrôlez pression des pneus, usure de chaîne et serrages avant les essais.</li>
+                    <li><strong>Personnalisation:</strong> adaptez selon pratique (route, gravel, VTT) et mobilité personnelle.</li>
+                </ul>
+            </section>
+
+            <section class="card" aria-labelledby="conclusion-title">
+                <h2 id="conclusion-title">✅ Conclusion</h2>
+                <p>Une position optimisée améliore l’efficacité, réduit la fatigue et augmente le plaisir de rouler. Prenez le temps d’ajuster chaque élément, observez vos sensations et, en cas de douleurs persistantes, sollicitez un bike fitter ou un professionnel de santé spécialisé.</p>
+            </section>
+        </main>
+
+
+    </div>
+    <footer class="site-footer">
+        <div class="footer-content">
+
+            <div class="colonne1">
+                <img src="../images/logo.png" alt="Logo du club" style="height:50px; margin-right:10px;">
+                <h3>VCSV Péronne</h3>
+            </div>
+
+            <p class="footer-badge">Depuis 1952</p>
+
+            <div class="colonne3">
+                <a href="mailto:contact@clubcorbie.fr" style="color:#fff; text-decoration:none; margin:0 10px;">
+                    ✉️ vcsv.peronne@gmail.com
+                </a>
+                <a href="https://facebook.com/clubcorbie" target="_blank" style="color:#fff; text-decoration:none; margin:0 10px;">
+                    🌐 Facebook
+                </a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 VCSV_Péronne – Tous droits réservés</p>
+        </div>
+
+    </footer>
+
+</body>
+</html>
+
+<!--
+    :root {
+
+    --bleu-peronne: #0055a5;
+    --or-peronne: #f4c300;
+    --blanc: #ffffff;
+    --terracotta: #E2725B;
+}
+
+    /* - - - - - - - - - - - - - - - - - - - - - - - - - */
+ /* - - - - - - - - - - footer - - - - - - - - - - - */
+ /* - - - - - - - - - - - - - - - - - - - - - - - - */
+ .site-footer {
+     background: linear-gradient(135deg, #002b5c 40%, var(--bleu-peronne) 100%);
+     color: var(--blanc);
+     padding: 20px;
+     font-family: 'Segoe UI', sans-serif;
+     overflow: hidden;
+ }
+
+ .footer-content {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     flex-wrap: wrap;
+     z-index: 1;
+ }
+
+     .footer-content .colonne1 {
+         display: flex;
+         align-items: center;
+     }
+
+     .footer-content .colonne3 {
+         display: flex;
+         flex-direction: column-reverse;
+     }
+
+ .footer-badge {
+     background: var(--or-peronne);
+     color: var(--bleu-peronne);
+     display: inline-block;
+     padding: 0.4em 1em;
+     border-radius: 20px;
+     font-weight: bold;
+     font-size: 1em;
+ }
+
+
+ .footer-bottom {
+     text-align: center;
+     font-size: 0.9em;
+     margin-top: 15px;
+     color: #e0e0e0;
+     position: relative;
+     z-index: 1;
+ }
+
+
+ /* Responsive */
+ @media (max-width: 768px) {
+     .footer-content {
+         grid-template-columns: 1fr;
+         text-align: center;
+     }
+
+     .footer-logo {
+         margin-bottom: 2em;
+     }
+ }
+
+
+
+    <footer class="site-footer">
+    <div class="footer-content">
+
+        <div class="colonne1">
+            <img src="images/logo.png" alt="Logo du club" style="height:50px; margin-right:10px;">
+            <h3>VCSV Péronne</h3>
+        </div>
+
+        <p class="footer-badge">Depuis 1952</p>
+
+        <div class="colonne3">
+            <a href="mailto:contact@clubcorbie.fr" style="color:#fff; text-decoration:none; margin:0 10px;">
+                ✉️ vcsv.peronne@gmail.com
+            </a>
+            <a href="https://facebook.com/clubcorbie" target="_blank" style="color:#fff; text-decoration:none; margin:0 10px;">
+                🌐 Facebook
+            </a>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 VCSV_Péronne – Tous droits réservés</p>
+    </div>
+
+</footer>
+
+    -->

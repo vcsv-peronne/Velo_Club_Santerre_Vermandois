@@ -1,0 +1,668 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Rouler par temps humide – Fiche web animée</title>
+    <style>
+        /* - - - - - - - - - - - - - - - - - - - - - - - - - */
+        /* - - - - - - - - - - footer - - - - - - - - - - - */
+        /* - - - - - - - - - - - - - - - - - - - - - - - - */
+        .site-footer {
+            background: linear-gradient(135deg, #002b5c 40%, var(--bleu-peronne) 100%);
+            color: var(--blanc);
+            padding: 20px;
+            font-family: 'Segoe UI', sans-serif;
+            overflow: hidden;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            z-index: 1;
+        }
+
+            .footer-content .colonne1 {
+                display: flex;
+                align-items: center;
+            }
+
+            .footer-content .colonne3 {
+                display: flex;
+                flex-direction: column-reverse;
+            }
+
+        .footer-badge {
+            background: var(--or-peronne);
+            color: var(--bleu-peronne);
+            display: inline-block;
+            padding: 0.4em 1em;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 1em;
+        }
+
+
+        .footer-bottom {
+            text-align: center;
+            font-size: 0.9em;
+            margin-top: 15px;
+            color: #e0e0e0;
+            position: relative;
+            z-index: 1;
+        }
+
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .footer-logo {
+                margin-bottom: 2em;
+            }
+        }
+
+        /* Palette & bases */
+        :root {
+            --bg: #0e2a3d;
+            --panel: #133a53;
+            --accent: #4fb3ff;
+            --accent-2: #ffd166; /* visibilité */
+            --text: #e9f1f7;
+            --muted: #9fb3c4;
+            --ok: #7bd389;
+            --warn: #ff9f1c;
+            --bleu-peronne: #0055a5;
+            --or-peronne: #f4c300;
+            --blanc: #ffffff;
+            --terracotta: #E2725B;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(180deg, var(--bg), var(--bleu-peronne));
+            color: var(--or-peronne);
+        }
+
+        /* Container */
+        .rain-guide {
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 32px 20px;
+        }
+
+        .guide-header {
+            display: grid;
+            grid-template-columns: 80px 1fr;
+            gap: 16px;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .guide-title {
+            margin: 0;
+            font-weight: 800;
+            letter-spacing: .5px;
+        }
+
+        .guide-sub {
+            margin: .25rem 0 0;
+            color: var(--muted);
+            font-size: .95rem;
+        }
+
+        /* Grid panels */
+        .panel-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0,1fr));
+            gap: 16px;
+        }
+
+        @media (max-width: 780px) {
+            .panel-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .panel {
+            background: linear-gradient(180deg, var(--panel), #0f3248);
+            border: 1px solid #14415f;
+            border-radius: 16px;
+            padding: 18px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 6px 18px rgba(0,0,0,.25);
+        }
+
+            .panel::after {
+                content: "";
+                position: absolute;
+                inset: -40% -10% auto auto;
+                height: 180px;
+                width: 180px;
+                background: radial-gradient(closest-side, rgba(79,179,255,.18), transparent 70%);
+                transform: rotate(12deg);
+            }
+
+        .panel-head {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 10px;
+        }
+
+        .panel h3 {
+            margin: 0;
+            font-size: 1.15rem;
+            font-weight: 800;
+            letter-spacing: .3px;
+        }
+
+        .panel-desc {
+            color: var(--muted);
+            font-size: .95rem;
+            margin: 4px 0 10px;
+        }
+
+        /* List items */
+        .tips {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            gap: 10px;
+        }
+
+        .tip {
+            display: grid;
+            grid-template-columns: 36px 1fr;
+            align-items: start;
+            gap: 10px;
+            background: rgba(255,255,255,.04);
+            border: 1px solid rgba(255,255,255,.06);
+            border-radius: 12px;
+            padding: 10px;
+            transition: transform .3s ease, border-color .3s ease, background .3s ease;
+        }
+
+            .tip:hover {
+                transform: translateY(-2px);
+                border-color: rgba(79,179,255,.4);
+                background: rgba(79,179,255,.08);
+            }
+
+            .tip strong {
+                font-weight: 700;
+                color: var(--text);
+            }
+
+            .tip small {
+                color: var(--muted);
+                display: block;
+                margin-top: 2px;
+            }
+
+        /* Icons */
+        .icon {
+            width: 36px;
+            height: 36px;
+        }
+
+            .icon svg {
+                width: 100%;
+                height: 100%;
+                display: block;
+            }
+
+        /* Header cloud rain animation */
+        .cloud {
+            filter: drop-shadow(0 6px 10px rgba(79,179,255,.25));
+        }
+
+        .raindrop {
+            animation: fall 2.6s linear infinite;
+            transform-origin: center;
+            opacity: .9;
+        }
+
+            .raindrop:nth-child(1) {
+                animation-delay: .0s;
+            }
+
+            .raindrop:nth-child(2) {
+                animation-delay: .5s;
+            }
+
+            .raindrop:nth-child(3) {
+                animation-delay: 1.2s;
+            }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(0) scaleY(1);
+                opacity: .0;
+            }
+
+            10% {
+                opacity: .9;
+            }
+
+            100% {
+                transform: translateY(28px) scaleY(1.1);
+                opacity: 0;
+            }
+        }
+
+        /* Panel reveal animation */
+        .panel {
+            opacity: 0;
+            transform: translateY(12px);
+        }
+
+            .panel.reveal {
+                opacity: 1;
+                transform: translateY(0);
+                transition: opacity .6s ease, transform .6s ease;
+            }
+
+        /* Toggle button */
+        .toggle {
+            margin: 10px 0 24px;
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            color: var(--accent-2);
+            background: transparent;
+            border: 1px solid var(--accent-2);
+            padding: 8px 12px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 700;
+        }
+
+            .toggle:focus {
+                outline: 2px solid var(--accent-2);
+                outline-offset: 2px;
+            }
+
+        /* Reduce motion preference */
+        @media (prefers-reduced-motion: reduce) {
+            .raindrop {
+                animation: none;
+            }
+
+            .panel {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+
+            .tip {
+                transition: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="rain-guide" aria-labelledby="title">
+        <div class="guide-header">
+            <!-- Animated cloud + rain SVG -->
+            <svg class="icon cloud" role="img" aria-label="Pluie" viewBox="0 0 64 64">
+                <defs>
+                    <linearGradient id="gRain" x1="0" x2="0" y1="0" y2="1">
+                        <stop offset="0" stop-color="#4fb3ff" />
+                        <stop offset="1" stop-color="#1e6ea1" />
+                    </linearGradient>
+                </defs>
+                <!-- Cloud -->
+                <path d="M20 38c-5.5 0-10-4.5-10-10s4.5-10 10-10c.8 0 1.6.1 2.4.3C25.8 13.6 30.6 10 36 10c8.3 0 15 6.7 15 15 0 .5 0 1-.1 1.5 3.1 1.2 5.1 4.2 5.1 7.5 0 4.6-3.7 8.3-8.3 8.3H20z"
+                      fill="#cfe8fb" />
+                <!-- Raindrops -->
+                <g>
+                    <path class="raindrop" d="M24 40c1.5-3 3-3 4.5 0-1.5 2-3 2-4.5 0z" fill="url(#gRain)" />
+                    <path class="raindrop" d="M34 40c1.5-3 3-3 4.5 0-1.5 2-3 2-4.5 0z" fill="url(#gRain)" />
+                    <path class="raindrop" d="M44 40c1.5-3 3-3 4.5 0-1.5 2-3 2-4.5 0z" fill="url(#gRain)" />
+                </g>
+            </svg>
+            <div>
+                <h1 id="title" class="guide-title">Rouler par temps humide</h1>
+                <p class="guide-sub">Fiche pratique animée pour cyclistes. Préparation, conduite, visibilité et entretien.</p>
+            </div>
+        </div>
+
+        <button class="toggle" aria-expanded="true" aria-controls="grid">Afficher/masquer les détails</button>
+
+        <div id="grid" class="panel-grid" role="list">
+            <!-- Préparation du vélo -->
+            <article class="panel" role="listitem" aria-labelledby="h-prep">
+                <div class="panel-head">
+                    <div class="icon" aria-hidden="true">
+                        <!-- Wrench + wheel icon -->
+                        <svg viewBox="0 0 48 48">
+                            <circle cx="34" cy="14" r="6" fill="none" stroke="#4fb3ff" stroke-width="2" />
+                            <path d="M6 38l10-10" stroke="#4fb3ff" stroke-width="2" stroke-linecap="round" />
+                            <path d="M14 22l6 6" stroke="#4fb3ff" stroke-width="2" stroke-linecap="round" />
+                            <path d="M8 40h8" stroke="#4fb3ff" stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <h3 id="h-prep">Préparation du vélo</h3>
+                </div>
+                <p class="panel-desc">Optimiser l’adhérence et la fiabilité en conditions mouillées.</p>
+                <ul class="tips">
+                    <li class="tip">
+                        <div class="icon" aria-hidden="true">
+                            <svg viewBox="0 0 48 48">
+                                <circle cx="24" cy="24" r="12" fill="none" stroke="#4fb3ff" stroke-width="2" />
+                                <path d="M10 24h28" stroke="#4fb3ff" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <div>
+                            <strong>Pneus et pression</strong>
+                            <small>Section un peu plus large, pression réduite de 0,2 à 0,5 bar pour améliorer l’adhérence.</small>
+                        </div>
+                    </li>
+                    <li class="tip">
+                        <div class="icon" aria-hidden="true">
+                            <svg viewBox="0 0 48 48">
+                                <rect x="8" y="16" width="12" height="16" rx="2" fill="none" stroke="#4fb3ff" stroke-width="2" />
+                                <path d="M20 24h20" stroke="#4fb3ff" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <div>
+                            <strong>Freinage</strong>
+                            <small>Vérifier plaquettes/patins. Anticiper, l’efficacité est réduite sur sol mouillé.</small>
+                        </div>
+                    </li>
+                    <li class="tip">
+                        <div class="icon" aria-hidden="true">
+                            <svg viewBox="0 0 48 48">
+                                <circle cx="24" cy="24" r="6" fill="none" stroke="#ffd166" stroke-width="2" />
+                                <path d="M12 24h10" stroke="#ffd166" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <div>
+                            <strong>Éclairage</strong>
+                            <small>Avant/arrière, même en journée pour compenser la visibilité réduite.</small>
+                        </div>
+                    </li>
+                    <li class="tip">
+                        <div class="icon" aria-hidden="true">
+                            <svg viewBox="0 0 48 48">
+                                <path d="M10 28h28" stroke="#4fb3ff" stroke-width="2" stroke-linecap="round" />
+                                <path d="M12 20h24" stroke="#4fb3ff" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <div>
+                            <strong>Garde-boue</strong>
+                            <small>Fortement recommandés pour limiter projections et améliorer confort.</small>
+                        </div>
+                    </li>
+                    <li class="tip">
+                        <div class="icon" aria-hidden="true">
+                            <svg viewBox="0 0 48 48">
+                                <path d="M8 24h32" stroke="#4fb3ff" stroke-width="2" stroke-linecap="round" />
+                                <circle cx="16" cy="24" r="2" fill="#4fb3ff" />
+                                <circle cx="24" cy="24" r="2" fill="#4fb3ff" />
+                                <circle cx="32" cy="24" r="2" fill="#4fb3ff" />
+                            </svg>
+                        </div>
+                        <div>
+                            <strong>Transmission</strong>
+                            <small>Lubrifier “wet” pour limiter la corrosion et maintenir la fluidité.</small>
+                        </div>
+                    </li>
+                </ul>
+            </article>
+
+            <!-- Équipement du cycliste -->
+            <article class="panel" role="listitem" aria-labelledby="h-equip">
+                <div class="panel-head">
+                    <div class="icon" aria-hidden="true">
+                        <svg viewBox="0 0 48 48">
+                            <path d="M10 20c0-6 6-10 14-10s14 4 14 10" fill="none" stroke="#4fb3ff" stroke-width="2" />
+                            <rect x="8" y="20" width="32" height="10" rx="4" fill="none" stroke="#4fb3ff" stroke-width="2" />
+                        </svg>
+                    </div>
+                    <h3 id="h-equip">Équipement du cycliste</h3>
+                </div>
+                <p class="panel-desc">Rester au sec et visible, sans surchauffer.</p>
+                <ul class="tips">
+                    <li class="tip">
+                        <div class="icon" aria-hidden="true">
+                            <svg viewBox="0 0 48 48">
+                                <rect x="12" y="10" width="24" height="28" rx="6" fill="none" stroke="#4fb3ff" stroke-width="2" />
+                            </svg>
+                        </div>
+                        <div>
+                            <strong>Veste et protection</strong>
+                            <small>Imperméable respirante, sur-chaussures, gants étanches.</small>
+                        </div>
+                    </li>
+                    <li class="tip">
+                        <div class="icon" aria-hidden="true">
+                            <svg viewBox="0 0 48 48">
+                                <path d="M10 28h28" stroke="#ffd166" stroke-width="3" stroke-linecap="round" />
+                                <circle cx="24" cy="28" r="3" fill="#ffd166" />
+                            </svg>
+                        </div>
+                        <div>
+                            <strong>Visibilité</strong>
+                            <small>Couleurs vives + éléments réfléchissants.</small>
+                        </div>
+                    </li>
+                    <li class="tip">
+                        <div class="icon" aria-hidden="true">
+                            <svg viewBox="0 0 48 48">
+                                <rect x="10" y="16" width="28" height="12" rx="6" fill="none" stroke="#4fb3ff" stroke-width="2" />
+                            </svg>
+                        </div>
+                        <div>
+                            <strong>Casque</strong>
+                            <small>Mousse ok, visière pas trop large pour garder le champ visuel.</small>
+                        </div>
+                    </li>
+                </ul>
+            </article>
+
+            <!-- Technique de conduite -->
+            <article class="panel" role="listitem" aria-labelledby="h-tech">
+                <div class="panel-head">
+                    <div class="icon" aria-hidden="true">
+                        <svg viewBox="0 0 48 48">
+                            <path d="M10 30h28" stroke="#4fb3ff" stroke-width="2" stroke-linecap="round" />
+                            <path d="M18 18l12 12" stroke="#4fb3ff" stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <h3 id="h-tech">Technique de conduite</h3>
+                </div>
+                <p class="panel-desc">Souplesse, trajectoire et anticipation.</p>
+                <ul class="tips">
+                    <li class="tip">
+                        <div class="icon" aria-hidden="true">
+                            <svg viewBox="0 0 48 48">
+                                <path d="M8 24h32" stroke="#4fb3ff" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <div>
+                            <strong>Anticiper</strong>
+                            <small>Freinage plus long; éviter les à-coups.</small>
+                        </div>
+                    </li>
+                    <li class="tip">
+                        <div class="icon" aria-hidden="true">
+                            <svg viewBox="0 0 48 48">
+                                <path d="M12 30c10-12 18-12 24 0" fill="none" stroke="#4fb3ff" stroke-width="2" />
+                            </svg>
+                        </div>
+                        <div>
+                            <strong>Virages</strong>
+                            <small>Trajectoire un peu élargie, rester souple sur le vélo.</small>
+                        </div>
+                    </li>
+                    <li class="tip">
+                        <div class="icon" aria-hidden="true">
+                            <svg viewBox="0 0 48 48">
+                                <rect x="18" y="16" width="12" height="16" rx="4" fill="none" stroke="#4fb3ff" stroke-width="2" />
+                            </svg>
+                        </div>
+                        <div>
+                            <strong>Relances</strong>
+                            <small>Pédaler en douceur pour garder l’adhérence.</small>
+                        </div>
+                    </li>
+                    <li class="tip">
+                        <div class="icon" aria-hidden="true">
+                            <svg viewBox="0 0 48 48">
+                                <rect x="8" y="22" width="10" height="4" fill="#cfe8fb" />
+                                <rect x="20" y="22" width="10" height="4" fill="#cfe8fb" />
+                                <rect x="32" y="22" width="8" height="4" fill="#cfe8fb" />
+                            </svg>
+                        </div>
+                        <div>
+                            <strong>Surfaces à risque</strong>
+                            <small>Bandes blanches, plaques métalliques, pavés: très glissants.</small>
+                        </div>
+                    </li>
+                    <li class="tip">
+                        <div class="icon" aria-hidden="true">
+                            <svg viewBox="0 0 48 48">
+                                <path d="M12 24h24" stroke="#4fb3ff" stroke-width="2" stroke-linecap="round" />
+                                <path d="M18 24h12" stroke="#ffd166" stroke-width="4" stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <div>
+                            <strong>Distance de sécurité</strong>
+                            <small>Augmenter l’espace avec cyclistes et véhicules.</small>
+                        </div>
+                    </li>
+                </ul>
+            </article>
+
+            <!-- Entretien après sortie -->
+            <article class="panel" role="listitem" aria-labelledby="h-maint">
+                <div class="panel-head">
+                    <div class="icon" aria-hidden="true">
+                        <svg viewBox="0 0 48 48">
+                            <path d="M12 34h24" stroke="#4fb3ff" stroke-width="2" stroke-linecap="round" />
+                            <circle cx="16" cy="34" r="3" fill="#4fb3ff" />
+                            <circle cx="32" cy="34" r="3" fill="#4fb3ff" />
+                        </svg>
+                    </div>
+                    <h3 id="h-maint">Entretien après sortie</h3>
+                </div>
+                <p class="panel-desc">Limiter l’usure et la corrosion, garder un vélo fiable.</p>
+                <ul class="tips">
+                    <li class="tip">
+                        <div class="icon" aria-hidden="true">
+                            <svg viewBox="0 0 48 48">
+                                <path d="M10 26l10-2" stroke="#4fb3ff" stroke-width="2" stroke-linecap="round" />
+                                <circle cx="34" cy="24" r="4" fill="#4fb3ff" />
+                            </svg>
+                        </div>
+                        <div>
+                            <strong>Rincer</strong>
+                            <small>Enlever boue et sel, surtout hiver.</small>
+                        </div>
+                    </li>
+                    <li class="tip">
+                        <div class="icon" aria-hidden="true">
+                            <svg viewBox="0 0 48 48">
+                                <rect x="14" y="16" width="20" height="16" rx="4" fill="none" stroke="#4fb3ff" stroke-width="2" />
+                                <path d="M18 20h12" stroke="#4fb3ff" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <div>
+                            <strong>Sécher</strong>
+                            <small>Essuyer chaîne, freins et cadre.</small>
+                        </div>
+                    </li>
+                    <li class="tip">
+                        <div class="icon" aria-hidden="true">
+                            <svg viewBox="0 0 48 48">
+                                <path d="M8 24h32" stroke="#4fb3ff" stroke-width="2" stroke-linecap="round" />
+                                <circle cx="16" cy="24" r="2" fill="#4fb3ff" />
+                                <circle cx="24" cy="24" r="2" fill="#4fb3ff" />
+                                <circle cx="32" cy="24" r="2" fill="#4fb3ff" />
+                            </svg>
+                        </div>
+                        <div>
+                            <strong>Relubrifier</strong>
+                            <small>Film fin d’huile “wet” sur transmission.</small>
+                        </div>
+                    </li>
+                    <li class="tip">
+                        <div class="icon" aria-hidden="true">
+                            <svg viewBox="0 0 48 48">
+                                <circle cx="24" cy="24" r="12" fill="none" stroke="#4fb3ff" stroke-width="2" />
+                                <path d="M24 12v12l8 6" stroke="#4fb3ff" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <div>
+                            <strong>Inspection</strong>
+                            <small>Usure pneus et patins: vérifier plus souvent.</small>
+                        </div>
+                    </li>
+                </ul>
+            </article>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+
+            <div class="colonne1">
+                <img src="images/logo.png" alt="Logo du club" style="height:50px; margin-right:10px;">
+                <h3>VCSV Péronne</h3>
+            </div>
+
+            <p class="footer-badge">Depuis 1952</p>
+
+            <div class="colonne3">
+                <a href="mailto:contact@clubcorbie.fr" style="color:#fff; text-decoration:none; margin:0 10px;">
+                    ✉️ vcsv.peronne@gmail.com
+                </a>
+                <a href="https://facebook.com/clubcorbie" target="_blank" style="color:#fff; text-decoration:none; margin:0 10px;">
+                    🌐 Facebook
+                </a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 VCSV_Péronne – Tous droits réservés</p>
+        </div>
+
+    </footer>
+
+
+
+</body>
+</html>
+
+<script>
+    // Simple reveal on load
+    document.querySelectorAll('.panel').forEach((p, i) => {
+        setTimeout(() => p.classList.add('reveal'), 160 + i * 120);
+    });
+
+    // Toggle details button
+    const btn = document.querySelector('.toggle');
+    const grid = document.getElementById('grid');
+    let expanded = true;
+    btn.addEventListener('click', () => {
+        expanded = !expanded;
+        btn.setAttribute('aria-expanded', String(expanded));
+        grid.style.display = expanded ? 'grid' : 'none';
+        btn.textContent = expanded ? 'Afficher/masquer les détails' : 'Afficher les détails';
+    });</script>
