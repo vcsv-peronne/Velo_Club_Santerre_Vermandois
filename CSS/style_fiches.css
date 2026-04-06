@@ -1,3 +1,4 @@
+
 /* Palette bleu et or */
 :root {
     --bleu: #0055a5;
@@ -60,7 +61,7 @@ main {
     }
 
 .step-image {
-    flex: 1 1 40%;
+    flex: 1 1 80%;
     max-width: 280px;
 }
 
@@ -68,6 +69,7 @@ main {
         width: 100%;
         height: auto;
         display: block;
+        height:100%;
     }
 
 .step-text {
@@ -138,11 +140,11 @@ main {
     .footer-logo {
         margin-bottom: 2em;
     }
+
     .step,
     .step.reverse {
         left: 0;
     }
-   
 }
 
 
@@ -213,7 +215,6 @@ main {
 
 .materiel {
     display: flex;
-    
     margin-bottom: 3rem;
     background: linear-gradient(135deg, var(--bleu) 40%, var(--or) 100%);
     border: 6px solid var(--or);
@@ -221,17 +222,18 @@ main {
     border-radius: 10px;
     overflow: hidden;
     position: relative;
-    color:white;
-    font-size:23px;
+    color: white;
+    font-size: 23px;
 }
-.materiel h2 {
-    color: var(--or);
-    margin-top: 0;
-    text-align:center;
-}
+
+    .materiel h2 {
+        color: var(--or);
+        margin-top: 0;
+        text-align: center;
+    }
+
 .materiel-text {
     flex: 1 1 60%;
-   
 }
 
 .eclairage {
@@ -260,5 +262,4 @@ main {
     grid-template-columns: 1fr 1fr;
     gap: 30px;
     margin: 30px;
-   
 }
