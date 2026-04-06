@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galerie d'images</title>
+    <link rel="stylesheet" href="..\..\CSS\style_statut.css">
+</head>
+<body>
+    <header>
+        <h1>Photo officielle</h1>
+        <p style="font-size: 1.4rem">Remise officielle des maillots saison 2026.</p>
+    </header>
+
+
+    <div class="gallery">
+        <img src="remise/photo (1).jpg" alt="Photo 1">
+        <img src="remise/photo (2).jpg" alt="Photo 2">
+        <img src="remise/photo (3).jpg" alt="Photo 3">
+        <img src="remise/photo (4).jpg" alt="Photo 4">
+        <img src="remise/photo (5).jpg" alt="Photo 5">
+        <img src="remise/photo (5).jpg" alt="Photo 5">
+        <img src="remise/photo (5).jpg" alt="Photo 5">
+        <img src="remise/photo (6).jpg" alt="Photo 5">
+        <img src="remise/photo (7).jpg" alt="Photo 5">
+        <img src="remise/photo (8).jpg" alt="Photo 5">
+        <img src="remise/photo (9).jpg" alt="Photo 5">
+        <img src="remise/photo (10).jpg" alt="Photo 5">
+
+    </div>
+    <footer class="site-footer">
+        <div class="footer-content">
+
+            <div class="colonne1">
+                <img src="../images/logo.png" alt="Logo du club" style="height:50px; margin-right:10px;">
+                <h3>VCSV Péronne</h3>
+            </div>
+
+            <p class="footer-badge">Depuis 1952</p>
+
+            <div class="colonne3">
+                <a href="mailto:vcsv.peronne@gmail.com" style="color:#fff; text-decoration:none; margin:0 10px;">✉️ vcsv.peronne@gmail.com</a>
+                <a href="https://www.youtube.com/@vcsvperonne" target="_blank" style="color:#fff; text-decoration:none; margin:0 10px;">📺 Chaîne YouTube</a>
+                <a href="https://www.facebook.com/VeloClubSanterreVermandois" target="_blank" style="color:#fff; text-decoration:none; margin:0 10px;">🌐 Facebook</a>
+
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 VCSV_Péronne – Tous droits réservés</p>
+        </div>
+
+    </footer>
+    <div id="lightbox" class="lightbox">
+        <img id="lightbox-img" src="" alt="">
+    </div>
+
+</body>
+<script>
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+
+    // Ouvre le lightbox quand on clique sur une image
+    document.addEventListener("click", e => {
+        if (e.target.tagName === "IMG" && e.target.closest(".gallery")) {
+            lightboxImg.src = e.target.src;
+            lightbox.style.display = "flex";
+        }
+    });
+
+    // Ferme le lightbox quand on clique dessus
+    lightbox.addEventListener("click", () => {
+        lightbox.style.display = "none";
+    });</script>
+</html>
