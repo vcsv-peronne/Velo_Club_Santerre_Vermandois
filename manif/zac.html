@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Carnaval 2026</title>
+    <title>Prix de la ville</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Style CSS-->
     <link rel="stylesheet" href="..\CSS\stylesEvents.css">
@@ -10,8 +10,8 @@
 <body>
 
     <header>
-        <h1>Carnaval de Péronne</h1>
-        <p>Tous publics.</p>
+        <h1>Prix Zac la chapelette</h1>
+        <p>ACCESS 1-2-3-4 / U17 / U15</p>
         <div class="event-message">
             <span id="event-status">Chargement...</span>
         </div>
@@ -19,41 +19,52 @@
 
     <section class="event">
         <div class="essai">
-            <h2>Péronne</h2>
-            <p><strong>Date :</strong> Dimanche 10 mai 2026</p>
+            <h2>Péronne - ZAC la chapelette</h2>
+            <h2><strong>Date :</strong> Samedi 02 mai 2026</h2>
         </div>
-        <div>
-            <p>rassemblement à partir de 14H Espace Mac Orlan</p>
-            <p>Départ du cortege à 15h</p>
+        <div class="essai">
+            <p>Dossard à partir de 12H au podium, rue henri Becquerel</p>
+            <p>Départ à 13h. ACCESS</p>
+            <p>Départ à 15h. U17</p>
+            <p>Départ à 17h. U15</p>
         </div>
     </section>
 
     <section class="grid_2-col">
         <div class="map">
 
-            <img src="../images/evenements/parcours_carnaval.jpg" ;style="border: none" width=" 600" height="600" alt="parcours">
+            <img src="../images/evenements/parcours_zac.jpg" ;style="border: none" width=" 600" height="600" alt="parcours">
 
         </div>
 
         <div style="margin-top: 20px; align-content:center; border-block: 5px solid red; padding-bottom:10px;">
-            <p>Defilé festif dans les rue de Péronne</p>
-            <p>Rassemblement parking espace Mac Orlan à 14h</p>
-
-            <p> Départ à 15h</p>
+            <p>Boucle dans la commune.</p>
+            <p> 2.2km à parcourir 28 fois pour les ACCESS et U17.</p>
+            <p>et 15 fois pour les U15.</p>
+            <p> Départ à 13h devant le podium.</p>
             <p>
-                <br />
+                <br /><strong>Itineraire:</strong>
+                <ul>
+                    <li>Rue henri Becquerel</li>
+                    <li>route de barleux</li>
+                    
+                    <li>rue de l'industrie</li>
+                    
+                </ul>
             </p>
             <p><strong>Coordonnées :</strong></p>
             <p>M LEROY Frederic<br /></p>
             <p> 06 80 82 15 82</p>
             <p>03 22 84 37 54</p>
             <a href="mailto:vcsv.peronne@gmail.com?subject=Demande%20d%20info">vcsv.peronne@gmail.com</a>
-        </div>
 
+
+        </div>
+       
     </section>
 
-    <section class="event">
-        <img src="../images/evenements/carnaval.jpg" alt="Affiche de l'événement">
+    <section style="display: flex; justify-content: center; align-items: center;">
+        <img src="../images/evenements/zac.jpg" alt="Affiche de l'événement">
     </section>
 
     <footer class="site-footer">
@@ -106,6 +117,6 @@
     }
 
     // Exemple : événement le 23 novembre 2025
-    updateEventMessage("2026-05-10", "event-status");
+    updateEventMessage("2026-05-02", "event-status");
 
 </script>
